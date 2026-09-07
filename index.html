@@ -34,6 +34,8 @@ section{padding:86px 0;border-top:1px solid var(--line)}.section-head{display:fl
 .icon{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:rgba(77,163,255,.12);font-size:21px;margin-bottom:17px}.card h3{margin:0 0 8px;font-size:20px}.card p{color:var(--muted);margin:0}.tag{display:inline-block;margin-top:16px;padding:4px 9px;border-radius:999px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;background:rgba(255,255,255,.07);color:#cbd8e7}.current{color:#75e5a0}.dev{color:#ffd77d}.future{color:#bba8ff}
 .feature{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}.feature .card{min-height:280px}
 .list{display:grid;gap:10px;margin:18px 0 0;padding:0;list-style:none}.list li{padding:11px 0;border-bottom:1px solid var(--line);color:#c8d4e2}.list li:last-child{border-bottom:0}
+.applist li{display:flex;align-items:center;justify-content:space-between;gap:12px}.applist li a{font-weight:700;color:#eaf2ff}.applist li a:hover{color:var(--accent);text-decoration:underline}.applist .applink-disabled{color:var(--muted);font-weight:700}
+a.card{display:block}a.card .tag{margin-top:16px}
 .timeline{position:relative;display:grid;gap:14px}.step{display:grid;grid-template-columns:120px 1fr;gap:22px;padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025)}.step b{color:#8ec5ff}.step h3{margin:0 0 5px}.step p{margin:0;color:var(--muted)}
 .news{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.news-card{overflow:hidden;border:1px solid var(--line);border-radius:20px;background:var(--card)}.news-art{height:145px;background:linear-gradient(135deg,#12375c,#27184c);display:grid;place-items:center;font-size:40px}.news-body{padding:22px}.news-body small{color:#8fb0d2}.news-body h3{margin:8px 0}.news-body p{color:var(--muted);font-size:14px}
 .profile{display:grid;grid-template-columns:300px 1fr;gap:35px;align-items:center}.portrait{height:300px;border-radius:30px;background:linear-gradient(145deg,#142c47,#1c1740);display:grid;place-items:center;border:1px solid var(--line);font-size:82px;font-weight:1000}
@@ -265,6 +267,7 @@ summary{padding-block:5px}
       <a href="#platform-overview">Features</a>
       <a href="#ai">Chuligram AI</a>
       <a href="#technology">Technology</a>
+      <a href="#downloads">Apps</a>
       <a href="#developers">Developers</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
@@ -276,7 +279,6 @@ summary{padding-block:5px}
 <main id="home">
 <section class="hero">
   <div class="container">
-    <div class="eyebrow"><span class="dot"></span> Independent software & AI project</div>
     <h1>Building the <span class="gradient">future of communication & AI.</span></h1>
     <p>Chuligram Labs is the home of Chuligram, Chuligram AI, developer technology and long-term research into useful, private and intelligent software.</p>
     <div class="actions">
@@ -600,18 +602,6 @@ summary{padding-block:5px}
 </div>
 </section>
 
-<section id="projects">
-<div class="container">
- <div class="section-head"><h2>Selected projects</h2><p>Software projects that represent the practical learning and experimentation behind the founder's work.</p></div>
- <div class="grid">
-  <div class="card"><div class="icon">✅</div><h3>To-Do List App</h3><p>A practical task-management project built with HTML, CSS and JavaScript.</p></div>
-  <div class="card"><div class="icon">🧠</div><h3>Mixed Knowledge Quiz</h3><p>An interactive quiz experience built with HTML, CSS and JavaScript.</p></div>
-  <div class="card"><div class="icon">💰</div><h3>Expense Tracker</h3><p>A web application using HTML, CSS, JavaScript, Supabase and Chart.js.</p></div>
-  <div class="card"><div class="icon">🪐</div><h3>Orbital Drift</h3><p>An experimental web project built with HTML, CSS and JavaScript.</p></div>
- </div>
-</div>
-</section>
-
 <section id="roadmap">
 <div class="container">
  <div class="section-head"><h2>Roadmap</h2><p>A long-term direction rather than a promise that every item is already shipped.</p></div>
@@ -655,8 +645,33 @@ summary{padding-block:5px}
 <div class="container">
  <div class="section-head"><h2>Get Chuligram</h2><p>Choose the experience that matches your device. Availability depends on the current development stage.</p></div>
  <div class="download">
-  <div class="card"><div class="icon">📱</div><h3>Mobile</h3><p>Chuligram has an Android application foundation powered by Capacitor. Future releases can expand mobile support and polish the experience.</p><div class="actions" style="justify-content:flex-start"><a class="btn primary" href="#contact">Mobile updates</a></div></div>
-  <div class="card"><div class="icon">🌐</div><h3>Web</h3><p>Use the responsive web experience as the central place to explore the product and its ecosystem.</p><div class="actions" style="justify-content:flex-start"><a class="btn primary" href="#home">Back to top</a></div></div>
+  <div class="card">
+   <div class="icon">📱</div><h3>Mobile</h3>
+   <p>Chuligram has an Android application foundation powered by Capacitor. Future releases can expand mobile support and polish the experience.</p>
+   <ul class="list applist">
+    <li><a href="https://github.com/abrahamweb-dev/chuligram" target="_blank" rel="noopener">Chuligram for Android (source)</a><span class="tag current">Foundation</span></li>
+    <li><span class="applink-disabled">Chuligram for iPhone & iPad</span><span class="tag future">Planned</span></li>
+   </ul>
+  </div>
+  <div class="card">
+   <div class="icon">🌐</div><h3>Web & desktop</h3>
+   <p>Use the responsive web experience as the central place to explore the product and its ecosystem, or follow the desktop build as it develops.</p>
+   <ul class="list applist">
+    <li><a href="#home">Chuligram Labs — web experience</a><span class="tag current">Live</span></li>
+    <li><span class="applink-disabled">Chuligram for Windows / Mac / Linux</span><span class="tag future">Planned</span></li>
+   </ul>
+  </div>
+ </div>
+</div>
+</section>
+
+<section id="apps">
+<div class="container">
+ <div class="section-head"><h2>Source code</h2><p>Chuligram Labs is built in the open. Anyone can follow the code as it evolves, the same way Telegram publishes its own client source.</p></div>
+ <div class="grid">
+  <a class="card" href="https://github.com/abrahamweb-dev/chuligram" target="_blank" rel="noopener"><div class="icon">💻</div><h3>Chuligram</h3><p>Source code for the core Chuligram application.</p><span class="tag current">GitHub →</span></a>
+  <a class="card" href="https://github.com/abrahamweb-dev/Chuligram-Labs-Website" target="_blank" rel="noopener"><div class="icon">🌍</div><h3>Chuligram Labs Website</h3><p>The source behind this website, also public on GitHub.</p><span class="tag current">GitHub →</span></a>
+  <a class="card" href="https://github.com/abrahamweb-dev" target="_blank" rel="noopener"><div class="icon">🧑‍💻</div><h3>All repositories</h3><p>Browse every public repository from the founder, including smaller learning projects.</p><span class="tag current">GitHub →</span></a>
  </div>
 </div>
 </section>
@@ -1449,8 +1464,8 @@ summary{padding-block:5px}
   <div><a class="brand" href="#home"><span class="logo"></span><span>CHULIGRAM LABS</span></a><p style="color:var(--muted);max-width:330px;margin-top:17px">Building the future of communication and AI — one product, one system and one experiment at a time.</p></div>
   <div><h4>Chuligram</h4><a href="#chuligram">Messaging</a><a href="#chuligram">Groups</a><a href="#chuligram">Channels</a><a href="#chuligram">Calls</a><a href="#privacy">Privacy</a></div>
   <div><h4>Chuligram AI</h4><a href="#ai">AI Chat</a><a href="#ai">Coding</a><a href="#ai">Vision</a><a href="#ai">Files</a><a href="#ai-architecture">Agents</a></div>
-  <div><h4>Platform</h4><a href="#technology">Technology</a><a href="#developers">API</a><a href="#developers">SDKs</a><a href="#roadmap">Roadmap</a><a href="#research">Research</a></div>
-  <div><h4>About</h4><a href="#about">Founder</a><a href="#story">Story</a><a href="#projects">Projects</a><a href="#news">News</a><a href="#faq">FAQ</a><a href="#status">Product status</a><a href="#platform-overview">Ecosystem</a></div>
+  <div><h4>Platform</h4><a href="#technology">Technology</a><a href="#downloads">Apps</a><a href="#apps">Source code</a><a href="#developers">API</a><a href="#developers">SDKs</a><a href="#roadmap">Roadmap</a><a href="#research">Research</a></div>
+  <div><h4>About</h4><a href="#about">Founder</a><a href="#story">Story</a><a href="#news">News</a><a href="#faq">FAQ</a><a href="#status">Product status</a><a href="#platform-overview">Ecosystem</a></div>
  </div>
  <div class="footer-bottom"><span>© 2026 Chuligram Labs. All rights reserved.</span><span>Communication • AI • Research • Software</span></div>
 </div>
