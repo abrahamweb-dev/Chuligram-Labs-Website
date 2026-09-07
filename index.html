@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chuligram — communication, social, communities and AI platform. Explore Chuligram, Chuligram AI, technology, research, developers, security and the founder Abraham Sintayehu.">
+<title>Chuligram — One Platform for Messaging, Social, Communities & AI</title>
+<style>
+:root{
+  --bg:#07111f;--bg2:#0b1728;--card:#101f33;--card2:#0d1a2b;--text:#f4f8ff;
+  --muted:#9fb0c5;--line:rgba(255,255,255,.09);--accent:#4da3ff;--accent2:#7c5cff;
+  --success:#55d68a;--warning:#ffca5c;--max:1180px;--radius:22px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:
+radial-gradient(circle at 15% 0%,rgba(77,163,255,.15),transparent 32rem),
+radial-gradient(circle at 90% 10%,rgba(124,92,255,.14),transparent 30rem),var(--bg);
+color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}img{max-width:100%}.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(7,17,31,.84);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:-.03em;font-size:20px}
+.logo{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 10px 35px rgba(77,163,255,.2)}
+.logo:after{content:"C";font-weight:1000;color:white;font-size:21px}.navlinks{display:flex;gap:4px;align-items:center}.navlinks a{padding:10px 12px;color:#c6d4e5;font-size:14px;border-radius:10px}.navlinks a:hover{background:rgba(255,255,255,.06);color:white}
+.menu{display:none;background:none;border:1px solid var(--line);color:white;border-radius:10px;padding:9px 11px;font-size:18px}
+.hero{padding:105px 0 85px;text-align:center;position:relative;overflow:hidden}.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:rgba(255,255,255,.035);padding:7px 13px;border-radius:999px;color:#c8d8eb;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--success);box-shadow:0 0 18px var(--success)}
+h1{font-size:clamp(48px,8vw,92px);line-height:.98;letter-spacing:-.065em;margin:25px auto 22px;max-width:1050px}
+.gradient{background:linear-gradient(90deg,#fff,var(--accent),#b09cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:760px;margin:0 auto;color:var(--muted);font-size:19px}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 19px;border-radius:13px;border:1px solid var(--line);font-weight:800;font-size:14px}.btn.primary{background:white;color:#07111f}.btn.secondary{background:rgba(255,255,255,.045)}.btn:hover{transform:translateY(-1px)}
+.hero-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:70px;text-align:left}.mini{padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.035)}.mini strong{display:block;font-size:17px}.mini span{color:var(--muted);font-size:14px}
+section{padding:86px 0;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;gap:35px;align-items:end;margin-bottom:36px}.section-head h2{margin:0;font-size:clamp(32px,5vw,55px);line-height:1.05;letter-spacing:-.045em}.section-head p{max-width:570px;color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid.two{grid-template-columns:repeat(2,1fr)}.grid.four{grid-template-columns:repeat(4,1fr)}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--radius);padding:27px;transition:.2s}.card:hover{transform:translateY(-3px);border-color:rgba(77,163,255,.3)}
+.icon{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:rgba(77,163,255,.12);font-size:21px;margin-bottom:17px}.card h3{margin:0 0 8px;font-size:20px}.card p{color:var(--muted);margin:0}.tag{display:inline-block;margin-top:16px;padding:4px 9px;border-radius:999px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;background:rgba(255,255,255,.07);color:#cbd8e7}.current{color:#75e5a0}.dev{color:#ffd77d}.future{color:#bba8ff}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}.feature .card{min-height:280px}
+.list{display:grid;gap:10px;margin:18px 0 0;padding:0;list-style:none}.list li{padding:11px 0;border-bottom:1px solid var(--line);color:#c8d4e2}.list li:last-child{border-bottom:0}
+.timeline{position:relative;display:grid;gap:14px}.step{display:grid;grid-template-columns:120px 1fr;gap:22px;padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025)}.step b{color:#8ec5ff}.step h3{margin:0 0 5px}.step p{margin:0;color:var(--muted)}
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.news-card{overflow:hidden;border:1px solid var(--line);border-radius:20px;background:var(--card)}.news-art{height:145px;background:linear-gradient(135deg,#12375c,#27184c);display:grid;place-items:center;font-size:40px}.news-body{padding:22px}.news-body small{color:#8fb0d2}.news-body h3{margin:8px 0}.news-body p{color:var(--muted);font-size:14px}
+.profile{display:grid;grid-template-columns:300px 1fr;gap:35px;align-items:center}.portrait{height:300px;border-radius:30px;background:linear-gradient(145deg,#142c47,#1c1740);display:grid;place-items:center;border:1px solid var(--line);font-size:82px;font-weight:1000}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}.stat{padding:17px;border:1px solid var(--line);border-radius:15px}.stat b{font-size:24px;display:block}.stat span{color:var(--muted);font-size:13px}
+.faq details{border-bottom:1px solid var(--line);padding:19px 0}.faq summary{cursor:pointer;font-weight:800}.faq p{color:var(--muted);max-width:800px}
+.download{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.download .card{min-height:260px}
+footer{padding:65px 0 35px;border-top:1px solid var(--line);background:#050c16}.footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:35px}.footer-grid h4{margin:0 0 13px}.footer-grid a{display:block;color:var(--muted);font-size:14px;padding:4px 0}.footer-grid a:hover{color:white}.footer-bottom{border-top:1px solid var(--line);margin-top:40px;padding-top:22px;display:flex;justify-content:space-between;color:#71849b;font-size:13px;gap:15px}
+.notice{padding:18px 20px;border:1px solid rgba(255,202,92,.25);background:rgba(255,202,92,.05);border-radius:16px;color:#d9c99e;margin-top:25px}
+code{background:#081422;border:1px solid var(--line);padding:2px 6px;border-radius:6px;color:#b9d9ff}
+@media(max-width:900px){.navlinks{display:none}.menu{display:block}.navlinks.open{position:absolute;top:74px;left:0;right:0;display:grid;background:#081322;padding:12px;border-bottom:1px solid var(--line)}.hero-grid,.grid,.news,.grid.four{grid-template-columns:1fr 1fr}.feature,.profile,.download{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.container{width:min(100% - 26px,var(--max))}.hero{padding:75px 0}.hero-grid,.grid,.news,.grid.two,.stats,.footer-grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:15px}.step{grid-template-columns:1fr}.profile{gap:20px}.portrait{height:220px}}
+
+.integrated-faq{background:#fff}
+.integrated-faq .section-head{max-width:850px;margin:0 auto 28px;text-align:center}
+.integrated-faq .eyebrow{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.14em;color:#1683ff;margin-bottom:10px}
+.integrated-faq .section-head h2{margin:0 0 12px;font-size:clamp(32px,5vw,54px);line-height:1.05}
+.integrated-faq .section-head p{color:var(--muted);font-size:17px;line-height:1.7}
+.integrated-faq .faq-tools{max-width:760px;margin:0 auto 42px}
+.integrated-faq .faq-tools input{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:16px;padding:16px 18px;font:inherit;background:#fff;outline:none;box-shadow:0 8px 30px rgba(15,32,44,.05)}
+.integrated-faq .faq-tools input:focus{border-color:#1683ff;box-shadow:0 0 0 4px rgba(22,131,255,.10)}
+.integrated-faq .integrated-faq-grid{display:grid;gap:28px}
+.integrated-faq .category{border:1px solid var(--line);border-radius:22px;padding:26px;background:#fff;box-shadow:0 10px 35px rgba(15,32,44,.045)}
+.integrated-faq .category-head{margin-bottom:12px}
+.integrated-faq .category-head h2{margin:0 0 7px;font-size:25px}
+.integrated-faq .category-head p{margin:0;color:var(--muted);line-height:1.6}
+.integrated-faq .faq-item{border-top:1px solid var(--line)}
+.integrated-faq .faq-item:first-of-type{border-top:0}
+.integrated-faq .faq-question{width:100%;border:0;background:none;text-align:left;padding:19px 4px;font:600 16px inherit;color:var(--ink);cursor:pointer;position:relative;padding-right:38px}
+.integrated-faq .faq-question:after{content:'+';position:absolute;right:4px;top:15px;font-size:24px;font-weight:400;color:#1683ff}
+.integrated-faq .faq-item.open .faq-question:after{content:'−'}
+.integrated-faq .answer{display:none;padding:0 4px 19px;color:var(--muted);line-height:1.75}
+.integrated-faq .faq-item.open .answer{display:block}
+.integrated-faq .answer p{margin:0 0 12px}.integrated-faq .answer p:last-child{margin-bottom:0}
+.integrated-faq .answer ul{margin:0 0 12px;padding-left:22px}
+.integrated-faq .related{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.integrated-faq .related span{background:#f1f7fb;border:1px solid #e2edf3;border-radius:999px;padding:5px 9px;font-size:12px;color:#526570}
+.integrated-faq .faq-item.faq-hidden{display:none}
+@media(max-width:700px){.integrated-faq .category{padding:18px;border-radius:17px}.integrated-faq .faq-question{font-size:15px}}
+
+body{background:#fff !important;color:var(--ink,#111b21)}
+main,section{background:#fff}
+</style>
+
+<style>
+:root{
+  --bg:#ffffff;--bg2:#ffffff;--card:#ffffff;--card2:#fbfdff;--text:#17212b;
+  --muted:#66737f;--line:#e5e9ed;--accent:#229ed9;--accent2:#168ac1;
+  --success:#22a06b;--warning:#b77900;--max:1180px;--radius:18px;
+}
+html,body{background:#fff!important;color:#17212b!important}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header{background:rgba(255,255,255,.96)!important;border-bottom:1px solid #e5e9ed!important;box-shadow:0 2px 16px rgba(23,33,43,.035)}
+.navlinks a{color:#52616d!important}.navlinks a:hover{background:#f2f8fb!important;color:#168ac1!important}
+.logo{background:#229ed9!important;box-shadow:0 8px 24px rgba(34,158,217,.18)!important}
+.hero{background:#fff!important}.eyebrow{border:1px solid #d7edf8!important;background:#f3fbfe!important;color:#168ac1!important}
+.dot{background:#22a06b!important;box-shadow:none!important}
+.gradient{background:linear-gradient(90deg,#17212b,#229ed9,#168ac1)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}
+.hero p,.section-head p,.card p,.list li,.step p,.notice{color:#66737f!important}
+.btn.primary{background:#229ed9!important;color:#fff!important;border-color:#229ed9!important}.btn.secondary{background:#fff!important;color:#17212b!important;border-color:#dbe3e8!important}
+section{background:#fff!important;border-top:1px solid #eef1f3!important}
+.card,.mini,.step,.news-card{background:#fff!important;border:1px solid #e5e9ed!important;box-shadow:0 8px 28px rgba(23,33,43,.045)!important}
+.card:hover{border-color:#b9dff0!important;box-shadow:0 14px 36px rgba(23,33,43,.07)!important}
+.icon{background:#eef8fc!important;color:#168ac1!important}
+.tag{background:#f4f7f9!important;color:#61707b!important}.current{color:#198754!important}.dev{color:#9a6800!important}.future{color:#6951c8!important}
+.list li{border-bottom:1px solid #edf0f2!important}
+.notice{background:#fffaf0!important;border:1px solid #f0dfb6!important}
+code{background:#f4f7f9!important;border-color:#e2e7ea!important;color:#156b91!important}
+footer{background:#fff!important;border-top:1px solid #e5e9ed!important}.footer-grid a{color:#66737f!important}.footer-grid a:hover{color:#168ac1!important}.footer-bottom{color:#7b8790!important;border-top-color:#e5e9ed!important}
+.integrated-faq{background:#fff!important}
+.integrated-faq .faq-tools input{background:#fff!important;border-color:#d8e0e5!important;color:#17212b!important}
+.integrated-faq .category{background:#fff!important;border-color:#e3e8ec!important;box-shadow:0 8px 28px rgba(23,33,43,.045)!important}
+.integrated-faq .faq-question{color:#17212b!important}.integrated-faq .faq-item{border-top-color:#edf0f2!important}.integrated-faq .related span{background:#f3f8fb!important;border-color:#e1edf2!important;color:#526570!important}
+.added-section{background:#fff!important}
+.faq-nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 auto 24px;max-width:980px}
+.faq-nav a{padding:8px 11px;border:1px solid #e0e7eb;border-radius:999px;background:#fff;color:#53636e;font-size:12px;font-weight:700}
+.faq-nav a:hover{color:#168ac1;border-color:#b9dff0;background:#f4fbfe;text-decoration:none}
+@media(max-width:700px){.faq-nav{justify-content:flex-start;overflow:auto;flex-wrap:nowrap;padding-bottom:5px}.faq-nav a{white-space:nowrap}}
+</style>
+
+<style id="chuligram-final-white-professional">
+html,body{background:#fff!important;color:#111b21!important}
+main,section,header,footer,.section,.card,.faq-category,.faq-feature{background:#fff!important}
+.section{padding-top:82px;padding-bottom:82px}
+.card,.faq-category,.faq-feature{border:1px solid #e7edf0;border-radius:18px;box-shadow:0 8px 28px rgba(15,23,42,.055)}
+.card{transition:transform .2s ease,box-shadow .2s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 35px rgba(15,23,42,.09)}
+.callout{margin-top:28px;padding:22px 24px;border:1px solid #dfe9ee;border-radius:16px;background:#f8fbfc!important}
+.faq-extra{margin-top:42px}
+.faq-category{padding:26px;margin:20px 0}
+.faq-category h3{margin:0 0 16px}
+.faq-category details{border-top:1px solid #e9eef0;padding:16px 0}
+.faq-category details:first-of-type{border-top:0}
+.faq-category summary{cursor:pointer;font-weight:700;color:#17252d}
+.faq-category .answer{padding:13px 4px 2px;color:#52616a;line-height:1.7}
+</style>
+
+
+<style id="chuligram-responsive-v2">
+/* Responsive system: phone-first, tablet, laptop and wide desktop */
+*,*::before,*::after{box-sizing:border-box}
+html{width:100%;overflow-x:hidden;scroll-behavior:smooth}
+body{width:100%;min-width:0;margin:0;overflow-x:hidden;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}
+img,video,svg,iframe{max-width:100%;height:auto}
+pre,code{max-width:100%;overflow-x:auto}
+table{display:block;max-width:100%;overflow-x:auto}
+button,input,select,textarea{font:inherit;max-width:100%}
+
+.container,.wrap,.section-inner,.nav-inner{
+  width:min(1180px,calc(100% - 40px));
+  margin-inline:auto;
+}
+.section{width:100%;overflow:hidden}
+.section-head{max-width:850px}
+.grid{width:100%}
+
+/* Navigation */
+header{width:100%;position:sticky;top:0;z-index:1000}
+nav{max-width:1180px;margin:auto}
+nav a{white-space:nowrap}
+.menu-toggle,.mobile-menu-toggle{display:none}
+
+/* Typography scales down naturally */
+h1{font-size:clamp(2.25rem,5vw,4.8rem);line-height:1.02}
+h2{font-size:clamp(1.8rem,3.8vw,3.1rem);line-height:1.08}
+h3{font-size:clamp(1.05rem,2vw,1.35rem);line-height:1.25}
+p,li{line-height:1.65}
+
+/* Cards */
+.cards-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cards-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{min-width:0;overflow-wrap:anywhere}
+.callout,.faq-feature,.faq-category{min-width:0;overflow-wrap:anywhere}
+
+/* FAQ controls */
+.faq-search,.search-box{width:100%;max-width:760px}
+summary{list-style:none}
+summary::-webkit-details-marker{display:none}
+
+/* Touch-friendly controls */
+a,button,summary{touch-action:manipulation}
+a,button{min-height:42px}
+summary{padding-block:5px}
+
+/* Tablet */
+@media (max-width: 900px){
+  .container,.wrap,.section-inner,.nav-inner{width:min(100% - 32px,760px)}
+  .cards-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .section{padding-top:64px!important;padding-bottom:64px!important}
+  nav .desktop-links{display:none}
+  .menu-toggle,.mobile-menu-toggle{display:flex}
+}
+
+/* Phones */
+@media (max-width: 600px){
+  .container,.wrap,.section-inner,.nav-inner{width:calc(100% - 24px)}
+  body{font-size:15px}
+  .section{padding-top:48px!important;padding-bottom:48px!important}
+  .section-head{margin-bottom:28px}
+  .cards-3,.cards-2{grid-template-columns:1fr;gap:14px}
+  .card,.faq-category,.faq-feature{border-radius:14px!important}
+  .card{padding:18px!important}
+  .faq-category{padding:18px!important;margin:14px 0!important}
+  .faq-category details{padding:14px 0}
+  .faq-category summary{font-size:15px;padding-right:24px}
+  .faq-category .answer{font-size:14px;line-height:1.65}
+  .callout{padding:17px 18px;margin-top:20px}
+  .eyebrow{font-size:.75rem}
+  .icon{font-size:1.45rem}
+
+  /* Prevent long brand/nav text from pushing the page sideways */
+  header,header *{max-width:100%}
+  nav{padding-inline:0!important}
+  nav a{font-size:14px}
+
+  /* Hero layouts become one clean column */
+  .hero,.hero-grid,.hero-content,.hero-copy,.hero-art,.two-col,.split,.feature-grid{
+    display:flex!important;
+    flex-direction:column!important;
+    width:100%!important;
+  }
+  .hero-content,.hero-copy{gap:18px}
+
+  /* Buttons become easy to tap */
+  .button-row,.buttons,.cta-row{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:10px!important}
+  .button-row a,.buttons a,.cta-row a,.button-row button,.buttons button,.cta-row button{
+    width:100%!important;text-align:center;
+  }
+
+  /* FAQ search/input stays inside viewport */
+  input,textarea,select{width:100%!important;min-width:0!important}
+
+  /* Footer stacks cleanly */
+  footer .grid,footer .footer-grid,footer .columns{display:grid!important;grid-template-columns:1fr!important}
+
+  /* Avoid fixed desktop sizing */
+  .stat,.metric,.feature,.panel{min-width:0!important;width:100%!important}
+}
+
+/* Very small phones */
+@media (max-width: 380px){
+  .container,.wrap,.section-inner,.nav-inner{width:calc(100% - 18px)}
+  body{font-size:14px}
+  h1{font-size:2.05rem}
+  h2{font-size:1.7rem}
+  .section{padding-top:40px!important;padding-bottom:40px!important}
+  .card{padding:15px!important}
+}
+
+/* Landscape phones */
+@media (max-height: 500px) and (orientation:landscape) and (max-width: 900px){
+  .section{padding-top:38px!important;padding-bottom:38px!important}
+}
+
+/* Respect accessibility settings */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+</style>
+
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home"><span class="logo"></span><span>CHULIGRAM LABS</span></a>
+    <nav class="navlinks" id="navlinks">
+      <a href="#chuligram">Chuligram</a>
+      <a href="#platform-overview">Features</a>
+      <a href="#ai">Chuligram AI</a>
+      <a href="#technology">Technology</a>
+      <a href="#developers">Developers</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="menu" onclick="document.getElementById('navlinks').classList.toggle('open')" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow"><span class="dot"></span> Independent software & AI project</div>
+    <h1>Building the <span class="gradient">future of communication & AI.</span></h1>
+    <p>Chuligram Labs is the home of Chuligram, Chuligram AI, developer technology and long-term research into useful, private and intelligent software.</p>
+    <div class="actions">
+      <a class="btn primary" href="#chuligram">Explore Chuligram</a>
+      <a class="btn secondary" href="#ai">Explore Chuligram AI</a>
+      <a class="btn secondary" href="#about">Meet the Founder</a>
+    </div>
+    <div class="hero-grid">
+      <div class="mini"><strong>Simple</strong><span>Powerful products should still feel easy to understand.</span></div>
+      <div class="mini"><strong>Private-minded</strong><span>Privacy and security are design goals, not afterthoughts.</span></div>
+      <div class="mini"><strong>Intelligent</strong><span>AI should help people create, discover and get things done.</span></div>
+    </div>
+  </div>
+
+</section>
+
+<section id="platform-overview" class="added-section">
+<div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">THE CHULIGRAM ECOSYSTEM</span><h2>One platform. Many ways to connect.</h2></div>
+    <p>Chuligram is designed to connect private communication, communities, publishing, social discovery and intelligent tools into one coherent product family.</p>
+  </div>
+  <div class="grid four">
+    <div class="card"><div class="icon">💬</div><h3>Messaging</h3><p>Private conversations with replies, reactions, forwarding, editing, deletion, media, files, voice messages and search.</p><span class="tag current">Core experience</span></div>
+    <div class="card"><div class="icon">👥</div><h3>Communities</h3><p>Groups for friends, classes, teams, organizations and large public communities, with a target of up to 400,000 members.</p><span class="tag dev">Scale target</span></div>
+    <div class="card"><div class="icon">📣</div><h3>Channels</h3><p>Broadcast announcements, education, news, creator content and product updates to large audiences.</p><span class="tag dev">Platform direction</span></div>
+    <div class="card"><div class="icon">✨</div><h3>Social discovery</h3><p>Explore posts, creators, communities, photos, videos and short-form content beyond your private chats.</p><span class="tag dev">Growing surface</span></div>
+    <div class="card"><div class="icon">📞</div><h3>Calls</h3><p>Voice and video communication with privacy controls, realtime signaling and a path toward group calling.</p><span class="tag dev">Development</span></div>
+    <div class="card"><div class="icon">🤖</div><h3>Chuligram AI</h3><p>A dedicated AI platform for conversation, reasoning, coding, files, vision, research, voice, memory and agents.</p><span class="tag future">AI platform</span></div>
+    <div class="card"><div class="icon">🧑‍🎨</div><h3>Creators</h3><p>Profiles, channels, communities, publishing and future analytics, audience and monetization tools.</p><span class="tag future">Creator ecosystem</span></div>
+    <div class="card"><div class="icon">🛠️</div><h3>Developer platform</h3><p>Long-term APIs, SDKs, bots and integrations for developers who want to build on Chuligram.</p><span class="tag future">Platform vision</span></div>
+  </div>
+</div>
+</section>
+
+<section id="experience" class="added-section">
+<div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">DESIGNED FOR REAL LIFE</span><h2>Built for people, communities and builders.</h2></div>
+    <p>The product is intended to feel useful whether you are chatting with a friend, running a community, publishing content, building a business or experimenting with AI.</p>
+  </div>
+  <div class="feature">
+    <div class="card"><div class="icon">🎓</div><h3>Students & learning communities</h3><p>Use conversations, groups, topics, files, announcements and future AI assistance for classes, study groups and collaborative projects.</p><ul class="list"><li>Class and study groups</li><li>Topic-based discussions</li><li>Document and media sharing</li><li>Announcements and community organization</li></ul></div>
+    <div class="card"><div class="icon">🏢</div><h3>Businesses & organizations</h3><p>Bring customer communication, internal communities, public channels and automation into one ecosystem as business capabilities mature.</p><ul class="list"><li>Professional identity</li><li>Customer conversations</li><li>Channels and announcements</li><li>Automation and integrations</li></ul></div>
+    <div class="card"><div class="icon">🎥</div><h3>Creators & communities</h3><p>Build an audience through public profiles, channels, posts, communities and short-form video, with future tools for analytics and growth.</p><ul class="list"><li>Public creator presence</li><li>Community building</li><li>Short-form content direction</li><li>Audience engagement</li></ul></div>
+    <div class="card"><div class="icon">💻</div><h3>Developers & makers</h3><p>Chuligram is designed to grow beyond an app into a developer platform with controlled APIs, SDKs, bots and intelligent integrations.</p><ul class="list"><li>APIs and SDKs</li><li>Bot development</li><li>AI-powered workflows</li><li>Platform integrations</li></ul></div>
+  </div>
+</div>
+</section>
+
+<section id="architecture-overview" class="added-section">
+<div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">HOW IT FITS TOGETHER</span><h2>A platform designed as a connected system.</h2></div>
+    <p>Chuligram separates product surfaces while keeping them connected through shared identity, backend services and a growing technology foundation.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><div class="icon">01</div><h3>Identity & account</h3><p>Profiles, usernames, authentication, sessions, privacy controls, account settings and multi-device access form the foundation.</p></div>
+    <div class="card"><div class="icon">02</div><h3>Communication layer</h3><p>Messaging, realtime updates, media, files, notifications and calling provide the everyday communication core.</p></div>
+    <div class="card"><div class="icon">03</div><h3>Community layer</h3><p>Groups, topics, roles, permissions, moderation, anti-spam and discovery support communities from small teams to ambitious large-scale targets.</p></div>
+    <div class="card"><div class="icon">04</div><h3>Content layer</h3><p>Channels, posts, creators, social discovery and short-form video create a public content ecosystem alongside private chats.</p></div>
+    <div class="card"><div class="icon">05</div><h3>Intelligence layer</h3><p>Chuligram AI is envisioned as a separate intelligence platform with routing, tools, memory, vision, files, voice and agent workflows.</p></div>
+    <div class="card"><div class="icon">06</div><h3>Developer layer</h3><p>Future APIs, SDKs, bots and integrations can let external builders create new experiences without weakening platform permissions or security.</p></div>
+  </div>
+</div>
+</section>
+
+<section id="status" class="added-section">
+<div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">TRANSPARENT DEVELOPMENT</span><h2>Know what is real, what is being built, and what comes next.</h2></div>
+    <p>Chuligram's public information should distinguish shipped foundations from development work and long-term ideas.</p>
+  </div>
+  <div class="timeline">
+    <div class="step"><b>NOW</b><div><h3>Current foundation</h3><p>React, TypeScript, Vite, Node.js, Express, PostgreSQL, Socket.IO and Capacitor form the current technical foundation described by the project.</p></div></div>
+    <div class="step"><b>BUILDING</b><div><h3>Product expansion</h3><p>Messaging, privacy, communities, channels, social experiences, calls, storage controls and the broader Chuligram ecosystem continue to evolve.</p></div></div>
+    <div class="step"><b>NEXT</b><div><h3>AI & platform capabilities</h3><p>Chuligram AI, developer APIs, SDKs, richer creator tools, deeper automation and more scalable infrastructure are part of the long-term direction.</p></div></div>
+    <div class="step"><b>VISION</b><div><h3>Research & proprietary technology</h3><p>Long-term research can explore model routing, evaluations, AI infrastructure, data systems and eventually deeper proprietary model work.</p></div></div>
+  </div>
+  <div class="notice"><strong>Product transparency:</strong> A roadmap item is not automatically a shipped feature. Availability can change as implementation, testing, security review and infrastructure readiness progress.</div>
+</div>
+</section>
+</section>
+
+<section id="chuligram">
+<div class="container">
+  <div class="section-head">
+    <h2>Chuligram</h2>
+    <p>A communication and social platform designed to bring conversations, communities, media, calls and future intelligent experiences into one place.</p>
+  </div>
+  <div class="feature">
+    <div class="card">
+      <div class="icon">💬</div><h3>Messaging</h3>
+      <p>One-to-one conversations with a foundation for replies, reactions, forwarding, editing, media, files and richer message interactions.</p>
+      <span class="tag current">Core platform</span>
+    </div>
+    <div class="card">
+      <div class="icon">👥</div><h3>Groups & Communities</h3>
+      <p>Spaces for friends, classes, teams, organizations and large communities, with room for moderation and future community tooling.</p>
+      <span class="tag dev">In development</span>
+    </div>
+    <div class="card">
+      <div class="icon">📢</div><h3>Channels</h3>
+      <p>Broadcast-style spaces for creators, organizations, projects and communities to publish updates to an audience.</p>
+      <span class="tag dev">In development</span>
+    </div>
+    <div class="card">
+      <div class="icon">📞</div><h3>Calls</h3>
+      <p>A future communication layer for audio and video conversations, designed to work naturally alongside messaging.</p>
+      <span class="tag future">Future vision</span>
+    </div>
+  </div>
+
+  <div class="grid" style="margin-top:16px">
+    <div class="card"><div class="icon">📸</div><h3>Stories & expressive media</h3><p>Temporary visual sharing, richer reactions, stickers, GIFs, photos, videos, voice and other expressive formats.</p><span class="tag future">Roadmap</span></div>
+    <div class="card"><div class="icon">📁</div><h3>Files & media</h3><p>Upload, send and manage documents and media with storage and download controls.</p><span class="tag current">Platform foundation</span></div>
+    <div class="card"><div class="icon">🔔</div><h3>Notifications</h3><p>Useful alerts that help people stay connected without turning communication into noise.</p><span class="tag dev">Product area</span></div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <div class="icon">🌍</div>
+    <h3>Chuligram Groups — up to 400,000 members</h3>
+    <p>Chuligram groups are designed for communities of up to <strong>400,000 members</strong> — from friends and families to schools, creators, organizations, public communities and large-scale discussions.</p>
+    <div class="grid two" style="margin-top:20px">
+      <div>
+        <h3 style="font-size:17px">💬 Rich conversations</h3>
+        <p>Replies, mentions, hashtags, reactions and organized discussions help people follow conversations even as communities grow.</p>
+      </div>
+      <div>
+        <h3 style="font-size:17px">🔔 Smart notifications</h3>
+        <p>Members can control notification noise and focus on mentions, replies and important activity.</p>
+      </div>
+      <div>
+        <h3 style="font-size:17px">📌 Pinned messages</h3>
+        <p>Group administrators can keep important announcements and information visible to the community.</p>
+      </div>
+      <div>
+        <h3 style="font-size:17px">🛡️ Administration</h3>
+        <p>Granular administrator roles can help large communities manage membership, content and moderation responsibilities.</p>
+      </div>
+      <div>
+        <h3 style="font-size:17px">🚫 Anti-spam & moderation</h3>
+        <p>Large communities need tools for spam prevention, reporting, restrictions and responsible moderation.</p>
+      </div>
+      <div>
+        <h3 style="font-size:17px">⚙️ Group permissions</h3>
+        <p>Control who can post, share media, send files and perform other actions according to the group's rules.</p>
+      </div>
+      <div>
+        <h3 style="font-size:17px">🧵 Topics & organization</h3>
+        <p>Future discussion topics can separate different subjects while keeping a large community easier to navigate.</p>
+      </div>
+      <div>
+        <h3 style="font-size:17px">🔗 Public groups</h3>
+        <p>Public communities can eventually have discoverable identities and shareable links so people can find and join them.</p>
+      </div>
+    </div>
+    <span class="tag dev">400,000-member capacity target</span>
+  </div>
+
+  <div class="notice"><strong>Product status:</strong> Chuligram is an evolving project. Some capabilities are implemented, some are being built, and some are part of the long-term vision. This website intentionally distinguishes those stages rather than presenting future ideas as finished features.</div>
+</div>
+</section>
+
+<section id="why">
+<div class="container">
+  <div class="section-head"><h2>Why Chuligram?</h2><p>The product philosophy behind the platform.</p></div>
+  <div class="grid">
+    <div class="card"><div class="icon">✨</div><h3>Simple</h3><p>Complex technology should become a simple experience for the person using it.</p></div>
+    <div class="card"><div class="icon">🔒</div><h3>Private</h3><p>Personal communication deserves careful privacy controls, transparent settings and responsible data handling.</p></div>
+    <div class="card"><div class="icon">🔄</div><h3>Connected</h3><p>The goal is a consistent experience across web, mobile and future desktop clients.</p></div>
+    <div class="card"><div class="icon">⚡</div><h3>Fast</h3><p>Real-time communication should feel immediate, responsive and dependable.</p></div>
+    <div class="card"><div class="icon">🧩</div><h3>Powerful</h3><p>Messaging is only the beginning: communities, media, calls, automation and intelligent tools can grow around it.</p></div>
+    <div class="card"><div class="icon">🌍</div><h3>Global</h3><p>Chuligram is designed as a platform that can eventually serve people, creators and developers anywhere.</p></div>
+    <div class="card"><div class="icon">🛡️</div><h3>Secure by design</h3><p>Security architecture should evolve with the product, with authentication, sessions, privacy controls and defensive engineering.</p></div>
+    <div class="card"><div class="icon">🎨</div><h3>Expressive</h3><p>Reactions, media, profiles, stories and creative tools make communication feel human rather than mechanical.</p></div>
+    <div class="card"><div class="icon">🧠</div><h3>Intelligent</h3><p>Chuligram AI can become a separate intelligence layer while remaining connected to the broader Chuligram ecosystem.</p></div>
+  </div>
+</div>
+</section>
+
+<section id="ai">
+<div class="container">
+  <div class="section-head"><h2>Chuligram AI</h2><p>A separate AI product built around conversation, reasoning, creation, tools, memory and agents.</p></div>
+  <div class="feature">
+    <div class="card">
+      <div class="icon">🧠</div><h3>AI Chat</h3>
+      <p>Natural conversations for questions, writing, brainstorming, learning, planning and everyday work.</p><span class="tag dev">Platform</span>
+    </div>
+    <div class="card">
+      <div class="icon">💻</div><h3>Coding</h3>
+      <p>Understand code, debug problems, explain architecture, generate implementation plans and assist with software development.</p><span class="tag dev">Platform</span>
+    </div>
+    <div class="card">
+      <div class="icon">🔬</div><h3>Reasoning & research</h3>
+      <p>Longer-form analysis, multi-step reasoning and research workflows that combine models with useful tools.</p><span class="tag future">Advanced vision</span>
+    </div>
+    <div class="card">
+      <div class="icon">🌐</div><h3>Web & knowledge</h3>
+      <p>Search and retrieval tools can give the assistant access to current information when a task requires it.</p><span class="tag future">Tooling</span>
+    </div>
+    <div class="card">
+      <div class="icon">👁️</div><h3>Vision</h3>
+      <p>Understand images, screenshots, diagrams and visual information and connect that understanding to a user's request.</p><span class="tag future">Capability</span>
+    </div>
+    <div class="card">
+      <div class="icon">📄</div><h3>File analysis</h3>
+      <p>Work with documents and other supported files to summarize, extract information, reason over content and assist with tasks.</p><span class="tag future">Capability</span>
+    </div>
+    <div class="card">
+      <div class="icon">🎙️</div><h3>Voice</h3>
+      <p>Future voice interaction for speaking with Chuligram AI naturally and using audio as an input and output modality.</p><span class="tag future">Future vision</span>
+    </div>
+    <div class="card">
+      <div class="icon">🗂️</div><h3>Memory</h3>
+      <p>Optional, user-controlled memory can make the assistant more useful across conversations without turning privacy into an afterthought.</p><span class="tag future">Research area</span>
+    </div>
+    <div class="card">
+      <div class="icon">🤖</div><h3>Agents & tools</h3>
+      <p>Instead of only answering, the system can eventually plan tasks, call tools, inspect results and complete multi-step workflows.</p><span class="tag future">Long-term</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="ai-architecture">
+<div class="container">
+ <div class="section-head"><h2>AI architecture</h2><p>Chuligram AI is envisioned as a platform rather than a single model.</p></div>
+ <div class="grid two">
+  <div class="card"><h3>AI Router</h3><p>A routing layer can choose the right model or workflow for reasoning, coding, vision, retrieval and other tasks.</p><ul class="list"><li>Reasoning workloads</li><li>Coding workloads</li><li>Vision workloads</li><li>Fast everyday conversations</li><li>Tool and agent workflows</li></ul></div>
+  <div class="card"><h3>Tool layer</h3><p>Models become more useful when they can safely interact with purpose-built tools.</p><ul class="list"><li>Web search and retrieval</li><li>File processing</li><li>Code execution</li><li>Knowledge bases</li><li>Chuligram actions</li></ul></div>
+  <div class="card"><h3>Memory layer</h3><p>A future memory system can separate temporary conversation context from user-approved long-term information.</p><ul class="list"><li>Conversation context</li><li>User-controlled memories</li><li>Project knowledge</li><li>Retrieval</li><li>Deletion and privacy controls</li></ul></div>
+  <div class="card"><h3>Agent layer</h3><p>Long-running tasks require planning, tool execution, state management, permissions and reliable stopping conditions.</p><ul class="list"><li>Planning</li><li>Tool selection</li><li>Execution state</li><li>Verification</li><li>Human approval</li></ul></div>
+ </div>
+</div>
+</section>
+
+<section id="technology">
+<div class="container">
+ <div class="section-head"><h2>Technology</h2><p>A practical engineering foundation that can grow as the products become more ambitious.</p></div>
+ <div class="grid four">
+  <div class="card"><div class="icon">⚛️</div><h3>React</h3><p>Interactive web interfaces and product experiences.</p></div>
+  <div class="card"><div class="icon">🟦</div><h3>TypeScript</h3><p>Typed application development and maintainable code.</p></div>
+  <div class="card"><div class="icon">🟢</div><h3>Node.js</h3><p>Server-side application and API infrastructure.</p></div>
+  <div class="card"><div class="icon">🚂</div><h3>Express</h3><p>Backend routing and HTTP API services.</p></div>
+  <div class="card"><div class="icon">🐘</div><h3>PostgreSQL</h3><p>Relational data and application persistence.</p></div>
+  <div class="card"><div class="icon">🔌</div><h3>Socket.IO</h3><p>Real-time communication infrastructure.</p></div>
+  <div class="card"><div class="icon">📱</div><h3>Capacitor</h3><p>Mobile application delivery from the web foundation.</p></div>
+  <div class="card"><div class="icon">🔧</div><h3>Git & GitHub</h3><p>Version control and collaborative development workflows.</p></div>
+ </div>
+</div>
+</section>
+
+<section id="platform">
+<div class="container">
+ <div class="section-head"><h2>One ecosystem. Many surfaces.</h2><p>The long-term goal is to make the same account, identity and core platform available across devices.</p></div>
+ <div class="grid">
+  <div class="card"><div class="icon">🌐</div><h3>Web</h3><p>Fast access from modern browsers with responsive layouts and progressive product experiences.</p><span class="tag current">Foundation</span></div>
+  <div class="card"><div class="icon">📱</div><h3>Android</h3><p>Mobile delivery through the existing Capacitor-based application foundation.</p><span class="tag current">Foundation</span></div>
+  <div class="card"><div class="icon">🖥️</div><h3>Desktop</h3><p>A future desktop experience can share the same backend and account infrastructure.</p><span class="tag future">Planned</span></div>
+  <div class="card"><div class="icon">🍎</div><h3>iPhone & iPad</h3><p>A future native or hybrid client can connect to the same platform services.</p><span class="tag future">Planned</span></div>
+ </div>
+</div>
+</section>
+
+<section id="privacy">
+<div class="container">
+ <div class="section-head"><h2>Privacy & security</h2><p>Trust has to be engineered into the product and communicated honestly.</p></div>
+ <div class="grid">
+  <div class="card"><div class="icon">🔐</div><h3>Account security</h3><p>Authentication, password management, session/device controls and stronger account protections.</p></div>
+  <div class="card"><div class="icon">👤</div><h3>Privacy controls</h3><p>Users should have understandable controls for profiles, messages, calls, invitations and activity.</p></div>
+  <div class="card"><div class="icon">📱</div><h3>Device management</h3><p>Review active sessions and devices so users can understand where their account is signed in.</p></div>
+  <div class="card"><div class="icon">🧹</div><h3>Data controls</h3><p>Storage, cache, downloads, account data and deletion should remain visible and manageable.</p></div>
+  <div class="card"><div class="icon">🧪</div><h3>Security research</h3><p>Security should continue through testing, threat modeling, dependency updates and defensive engineering.</p></div>
+  <div class="card"><div class="icon">⚠️</div><h3>No exaggerated promises</h3><p>Features such as end-to-end encryption should only be advertised when the underlying implementation actually provides it.</p></div>
+ </div>
+</div>
+</section>
+
+<section id="developers">
+<div class="container">
+ <div class="section-head"><h2>For developers</h2><p>Chuligram can grow from an application into a platform developers can build on.</p></div>
+ <div class="grid two">
+  <div class="card"><div class="icon">🧩</div><h3>APIs</h3><p>Future APIs can expose carefully scoped capabilities for accounts, messaging, communities, media and AI.</p><span class="tag future">Planned</span></div>
+  <div class="card"><div class="icon">📦</div><h3>SDKs</h3><p>Developer libraries can make integration easier across JavaScript, mobile and other supported environments.</p><span class="tag future">Planned</span></div>
+  <div class="card"><div class="icon">🤖</div><h3>AI tools</h3><p>Developers may eventually connect Chuligram AI models, agents and retrieval tools to their own applications.</p><span class="tag future">Planned</span></div>
+  <div class="card"><div class="icon">🛠️</div><h3>Documentation</h3><p>Clear API references, examples, authentication guides, rate limits and security practices will be essential before public platform launch.</p><span class="tag future">Planned</span></div>
+ </div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+ <div class="section-head"><h2>Meet the founder</h2><p>The person building the project from the ground up.</p></div>
+ <div class="profile">
+  <div class="portrait">AS</div>
+  <div>
+   <span class="eyebrow">Founder & Developer</span>
+   <h2 style="font-size:42px;margin:17px 0 8px">Abraham Sintayehu</h2>
+   <p style="color:var(--muted);font-size:17px">Abraham is a Computer Science student and web developer focused on building software, learning full-stack engineering and exploring the intersection of applications, AI and communication technology.</p>
+   <p style="color:var(--muted)">His current work includes Chuligram and Chuligram AI, alongside smaller web projects that have helped build practical experience with HTML, CSS, JavaScript, React, Node.js and related tools.</p>
+   <div class="stats">
+    <div class="stat"><b>Founder</b><span>Chuligram Labs</span></div>
+    <div class="stat"><b>Developer</b><span>Web & software</span></div>
+    <div class="stat"><b>Student</b><span>Computer Science</span></div>
+   </div>
+  </div>
+ </div>
+</div>
+</section>
+
+<section id="story">
+<div class="container">
+ <div class="section-head"><h2>The story behind Chuligram</h2><p>A product name with a personal beginning and a much bigger technical ambition.</p></div>
+ <div class="grid two">
+  <div class="card"><div class="icon">❤️</div><h3>“Chuli”</h3><p>“Chuli” comes from Abraham's nickname — a name he loves and wanted to turn into something meaningful.</p></div>
+  <div class="card"><div class="icon">✉️</div><h3>“gram”</h3><p>“gram” was added to make the product name feel naturally connected to communication and messaging.</p></div>
+  <div class="card"><div class="icon">🚀</div><h3>From an app to an ecosystem</h3><p>The ambition grew beyond a messaging interface toward a broader technology ecosystem combining communication, AI, developer tools and research.</p></div>
+  <div class="card"><div class="icon">🌱</div><h3>Built step by step</h3><p>The platform is being developed incrementally: foundation first, then deeper capabilities, infrastructure, AI tooling and a larger ecosystem.</p></div>
+ </div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+ <div class="section-head"><h2>Selected projects</h2><p>Software projects that represent the practical learning and experimentation behind the founder's work.</p></div>
+ <div class="grid">
+  <div class="card"><div class="icon">✅</div><h3>To-Do List App</h3><p>A practical task-management project built with HTML, CSS and JavaScript.</p></div>
+  <div class="card"><div class="icon">🧠</div><h3>Mixed Knowledge Quiz</h3><p>An interactive quiz experience built with HTML, CSS and JavaScript.</p></div>
+  <div class="card"><div class="icon">💰</div><h3>Expense Tracker</h3><p>A web application using HTML, CSS, JavaScript, Supabase and Chart.js.</p></div>
+  <div class="card"><div class="icon">🪐</div><h3>Orbital Drift</h3><p>An experimental web project built with HTML, CSS and JavaScript.</p></div>
+ </div>
+</div>
+</section>
+
+<section id="roadmap">
+<div class="container">
+ <div class="section-head"><h2>Roadmap</h2><p>A long-term direction rather than a promise that every item is already shipped.</p></div>
+ <div class="timeline">
+  <div class="step"><b>01 · Foundation</b><div><h3>Core communication</h3><p>Strengthen authentication, messaging, profiles, media, files, settings, storage and real-time infrastructure.</p></div></div>
+  <div class="step"><b>02 · Social</b><div><h3>Groups, channels & communities</h3><p>Expand the communication layer with richer community structures, moderation and creator experiences.</p></div></div>
+  <div class="step"><b>03 · AI</b><div><h3>Chuligram AI platform</h3><p>Build chat, model routing, coding, vision, file analysis, search, memory and tool capabilities.</p></div></div>
+  <div class="step"><b>04 · Agents</b><div><h3>AI that can work</h3><p>Develop safe agent workflows that can plan, use tools, verify results and ask for approval when needed.</p></div></div>
+  <div class="step"><b>05 · Developer platform</b><div><h3>APIs, SDKs & integrations</h3><p>Open selected platform capabilities to developers through documented, secure interfaces.</p></div></div>
+  <div class="step"><b>06 · Research</b><div><h3>Proprietary AI research</h3><p>Explore datasets, evaluation, fine-tuning, specialized models and eventually deeper model research as resources allow.</p></div></div>
+ </div>
+</div>
+</section>
+
+<section id="research">
+<div class="container">
+ <div class="section-head"><h2>Research direction</h2><p>The long-term ambition is not limited to wrapping existing models.</p></div>
+ <div class="grid">
+  <div class="card"><div class="icon">📚</div><h3>Evaluation</h3><p>Build rigorous internal tests for reasoning, coding, reliability, tool use and safety.</p></div>
+  <div class="card"><div class="icon">🧬</div><h3>Fine-tuning</h3><p>Investigate specialized training and adaptation for carefully defined tasks and domains.</p></div>
+  <div class="card"><div class="icon">🧮</div><h3>Model routing</h3><p>Study how multiple models and specialized systems can cooperate efficiently.</p></div>
+  <div class="card"><div class="icon">🛡️</div><h3>AI safety</h3><p>Build permission systems, tool boundaries, monitoring and evaluation into agentic workflows.</p></div>
+  <div class="card"><div class="icon">⚙️</div><h3>Infrastructure</h3><p>Research scalable inference, caching, queues, storage and retrieval infrastructure.</p></div>
+  <div class="card"><div class="icon">🌌</div><h3>Future models</h3><p>The eventual goal is to explore increasingly proprietary intelligence rather than depending forever on external model providers.</p></div>
+ </div>
+</div>
+</section>
+
+<section id="news">
+<div class="container">
+ <div class="section-head"><h2>Latest from Chuligram Labs</h2><p>A space for future product announcements, development notes and research updates.</p></div>
+ <div class="news">
+  <article class="news-card"><div class="news-art">💬</div><div class="news-body"><small>PRODUCT</small><h3>Building the communication foundation</h3><p>Chuligram continues to evolve from a messaging project toward a broader communication platform.</p></div></article>
+  <article class="news-card"><div class="news-art">🧠</div><div class="news-body"><small>AI</small><h3>Introducing the Chuligram AI vision</h3><p>A separate AI platform focused on reasoning, coding, tools, memory, research and agent workflows.</p></div></article>
+  <article class="news-card"><div class="news-art">🔧</div><div class="news-body"><small>ENGINEERING</small><h3>Growing the developer foundation</h3><p>Backend services, real-time communication, databases and mobile delivery form the base for future expansion.</p></div></article>
+ </div>
+</div>
+</section>
+
+<section id="downloads">
+<div class="container">
+ <div class="section-head"><h2>Get Chuligram</h2><p>Choose the experience that matches your device. Availability depends on the current development stage.</p></div>
+ <div class="download">
+  <div class="card"><div class="icon">📱</div><h3>Mobile</h3><p>Chuligram has an Android application foundation powered by Capacitor. Future releases can expand mobile support and polish the experience.</p><div class="actions" style="justify-content:flex-start"><a class="btn primary" href="#contact">Mobile updates</a></div></div>
+  <div class="card"><div class="icon">🌐</div><h3>Web</h3><p>Use the responsive web experience as the central place to explore the product and its ecosystem.</p><div class="actions" style="justify-content:flex-start"><a class="btn primary" href="#home">Back to top</a></div></div>
+ </div>
+</div>
+</section>
+
+
+
+<section id="social-platform" class="section">
+  <div class="section-head">
+    <span class="eyebrow">ONE PLATFORM</span>
+    <h2>Why keep switching between apps?</h2>
+    <p>Chuligram is designed to bring the experiences people use across messaging, social media, communities, short video and AI into one connected platform.</p>
+  </div>
+  <div class="grid cards-3">
+    <article class="card"><div class="icon">💬</div><h3>Telegram-style communication</h3><p>Fast personal messaging, media and file sharing, groups, channels, replies, reactions, usernames, calls and community conversations.</p></article>
+    <article class="card"><div class="icon">🌐</div><h3>Facebook-style social layer</h3><p>A social feed, profiles, communities, reactions, comments, discovery and sharing so people can connect beyond private chats.</p></article>
+    <article class="card"><div class="icon">🎬</div><h3>TikTok-style short video</h3><p>A short-form video experience for discovery, creators, trends, entertainment and community engagement.</p></article>
+    <article class="card"><div class="icon">🤖</div><h3>Chuligram AI</h3><p>An intelligent platform direction for conversation, coding, research, file analysis, image understanding, voice, memory and tool-based workflows.</p></article>
+    <article class="card"><div class="icon">👥</div><h3>Communities & channels</h3><p>Build public or private spaces around interests, schools, organizations, creators, businesses and communities.</p></article>
+    <article class="card"><div class="icon">🛠️</div><h3>Creators & developers</h3><p>Tools for creators, bots, automation and a developer ecosystem designed to grow the Chuligram platform.</p></article>
+  </div>
+  <div class="callout">
+    <strong>The idea:</strong> instead of opening one app for messages, another for social posts, another for short videos and another for AI, Chuligram aims to make those experiences feel like parts of one connected ecosystem.
+  </div>
+
+<div class="faq-extra">
+  <div class="faq-category">
+    <h3>Chuligram at a glance</h3>
+    <details><summary>What is Chuligram?</summary><div class="answer">Chuligram is a communication and social platform combining messaging, large communities, channels, social discovery, short-form video, calls, creator experiences and intelligent technology.</div></details>
+    <details><summary>Why combine messaging and social media?</summary><div class="answer">People currently switch between different apps for private conversations, communities, social posts, short videos, creators and AI. Chuligram's goal is to connect these experiences so users can move between them naturally from one account and one ecosystem.</div></details>
+    <details><summary>Is Chuligram trying to replace Telegram, Facebook and TikTok?</summary><div class="answer">The product direction is to combine useful categories of experience found across major platforms while building Chuligram's own identity, interface, technology and community model. It is not intended to be a literal copy of another service.</div></details>
+    <details><summary>Do I need separate apps for messaging, social content and short videos?</summary><div class="answer">The long-term Chuligram vision is no. The platform is being designed so messaging, communities, social discovery, short-form video and AI can live together as connected parts of the same ecosystem.</div></details>
+  </div>
+
+  <div class="faq-category">
+    <h3>Messaging</h3>
+    <details><summary>What can I send in Chuligram?</summary><div class="answer">The messaging experience is designed for text, photos, videos, files, voice messages, reactions, replies, forwarding and other everyday communication tools.</div></details>
+    <details><summary>Can I edit or delete messages?</summary><div class="answer">Message management is part of the platform experience, including editing and deletion flows where supported by the current application version and conversation permissions.</div></details>
+    <details><summary>Can I reply, react, copy and forward messages?</summary><div class="answer">Yes, these are core messaging interactions planned and supported across the Chuligram messaging experience, with permissions and privacy rules applied where appropriate.</div></details>
+    <details><summary>Can I send large files?</summary><div class="answer">File sharing is part of Chuligram's communication layer. Actual size limits depend on the deployed storage and backend configuration, so limits should only be advertised after they are finalized and tested.</div></details>
+  </div>
+
+  <div class="faq-category">
+    <h3>Groups & communities</h3>
+    <details><summary>How large can a Chuligram group become?</summary><div class="answer">Chuligram is designed with a target of supporting communities of up to 400,000 members. This is a platform target, not a claim that every current deployment has already been load-tested at that scale.</div></details>
+    <details><summary>What features are planned for large groups?</summary><div class="answer">Replies, mentions, hashtags, reactions, smart notifications, pinned messages, administrator controls, moderation, anti-spam tools, group permissions, topics and public-community discovery are part of the product direction.</div></details>
+    <details><summary>Can communities be public or private?</summary><div class="answer">Yes. Chuligram's community model is intended to support different privacy and discovery levels so people can create spaces for friends, schools, organizations, interests and public communities.</div></details>
+  </div>
+
+  <div class="faq-category">
+    <h3>Social media</h3>
+    <details><summary>Does Chuligram have a Facebook-style feed?</summary><div class="answer">The social layer is designed around profiles, posts, reactions, comments, sharing, discovery and community interaction, bringing social-media behavior into the same ecosystem as messaging.</div></details>
+    <details><summary>Can I follow people and creators?</summary><div class="answer">Creator and social discovery features are part of the platform direction. The exact follow, subscription and recommendation behavior can evolve as the social system is developed.</div></details>
+    <details><summary>Can I post photos and videos?</summary><div class="answer">Media-rich social publishing is part of the Chuligram experience, with support designed for posts, visual content and short-form video.</div></details>
+    <details><summary>Will Chuligram have a TikTok-style short-video feed?</summary><div class="answer">Yes, short-form video is part of the product direction, with an emphasis on discovery, creators, trends, entertainment and community engagement. Recommendation systems and safety controls will need careful development before being treated as final.</div></details>
+  </div>
+
+  <div class="faq-category">
+    <h3>Channels</h3>
+    <details><summary>What is a Chuligram channel?</summary><div class="answer">A channel is a publishing-oriented space for broadcasting updates, media, announcements, education, news, creator content or community information to an audience.</div></details>
+    <details><summary>Who can use channels?</summary><div class="answer">Creators, organizations, businesses, schools, communities and individuals can use the channel concept to publish information to followers or subscribers.</div></details>
+  </div>
+
+  <div class="faq-category">
+    <h3>Calls & voice</h3>
+    <details><summary>Can I make voice and video calls?</summary><div class="answer">Calling is part of Chuligram's product architecture, with voice, video and group communication intended to complement messaging and communities.</div></details>
+    <details><summary>Will group calls be supported?</summary><div class="answer">Group calling is part of the direction. Participant limits should be published only after the realtime infrastructure is implemented and capacity-tested.</div></details>
+  </div>
+
+  <div class="faq-category">
+    <h3>Chuligram AI</h3>
+    <details><summary>What is Chuligram AI?</summary><div class="answer">Chuligram AI is envisioned as a separate advanced AI product connected to the Chuligram ecosystem, with capabilities spanning conversation, reasoning, coding, research, web and knowledge tools, image understanding, file analysis, voice, memory, model routing and agent workflows.</div></details>
+    <details><summary>Can Chuligram AI analyze files?</summary><div class="answer">File analysis is part of the planned AI capability set. The final supported formats, limits and privacy behavior will depend on the implemented AI backend.</div></details>
+    <details><summary>Can Chuligram AI understand images?</summary><div class="answer">Image understanding is part of the AI roadmap, allowing users to work with visual information alongside text and files.</div></details>
+    <details><summary>Will Chuligram AI be able to code?</summary><div class="answer">Coding is a core direction for Chuligram AI, including programming assistance, debugging, explanations and developer workflows.</div></details>
+    <details><summary>Will Chuligram AI remember conversations?</summary><div class="answer">Memory is part of the planned AI architecture. Any persistent memory feature should provide clear controls over what is stored, how long it is retained and how users can manage or delete it.</div></details>
+  </div>
+
+  <div class="faq-category">
+    <h3>Creators & businesses</h3>
+    <details><summary>Is Chuligram for creators?</summary><div class="answer">Yes. The ecosystem is designed to support creators through profiles, publishing, communities, channels, short-form video, audience interaction and future creator tools.</div></details>
+    <details><summary>Can businesses use Chuligram?</summary><div class="answer">Businesses and organizations can use messaging, communities, channels, publishing and future automation tools to communicate with customers, teams and audiences.</div></details>
+    <details><summary>Will creators have analytics?</summary><div class="answer">Creator analytics are a natural part of the product direction, but specific metrics and dashboards should be considered planned until they are implemented and tested.</div></details>
+  </div>
+
+  <div class="faq-category">
+    <h3>Developers & bots</h3>
+    <details><summary>Will Chuligram have a developer platform?</summary><div class="answer">Yes. The long-term ecosystem includes APIs, SDKs, bots, automation and developer tools so other products and services can build on Chuligram.</div></details>
+    <details><summary>Can developers build bots?</summary><div class="answer">Bot and automation support is part of the platform direction. Production API permissions, authentication, rate limits and security requirements will be defined as the developer platform matures.</div></details>
+  </div>
+
+  <div class="faq-category">
+    <h3>Privacy & security</h3>
+    <details><summary>Is Chuligram secure?</summary><div class="answer">Security is a core design goal across accounts, sessions, privacy controls, storage, authentication and communication. Strong cryptographic claims should only be made after the relevant architecture is fully implemented, tested and independently reviewed.</div></details>
+    <details><summary>Does Chuligram support end-to-end encryption?</summary><div class="answer">End-to-end encrypted communication is an important security direction, but it should not be advertised as universally available until the cryptographic design is implemented, tested and audited.</div></details>
+    <details><summary>Can I control my privacy?</summary><div class="answer">The platform includes privacy controls for areas such as profile visibility, phone information, activity, messages, calls, invites and other account-level choices.</div></details>
+    <details><summary>Can I manage logged-in devices?</summary><div class="answer">Session and device management is part of the account security experience so users can review and control active sessions.</div></details>
+  </div>
+
+  <div class="faq-category">
+    <h3>Account & experience</h3>
+    <details><summary>Can I use Chuligram on multiple devices?</summary><div class="answer">The platform is designed around synchronized access across clients so users can move between supported devices while keeping their account experience connected.</div></details>
+    <details><summary>Will Chuligram have mobile and desktop apps?</summary><div class="answer">The ecosystem is being designed for web, mobile and desktop experiences, with the goal of providing a consistent account and communication layer across devices.</div></details>
+    <details><summary>Can I use Chuligram for school communities?</summary><div class="answer">Yes. Students, classes, clubs and learning communities are an important use case for groups, channels, messaging, files, calls and future educational AI experiences.</div></details>
+  </div>
+
+  <div class="faq-category">
+    <h3>Roadmap & transparency</h3>
+    <details><summary>Are all features listed on this website already available?</summary><div class="answer">No. The website intentionally distinguishes between the current foundation, features being built and longer-term vision. A roadmap describes direction; it does not automatically mean every capability is already shipped.</div></details>
+    <details><summary>Why does Chuligram have so many different features?</summary><div class="answer">The central idea is integration: communication, communities, social discovery, short video, creators, developers and AI can reinforce each other when they share one identity and ecosystem.</div></details>
+    <details><summary>What makes Chuligram different?</summary><div class="answer">Its defining goal is not simply to add more features. It is to connect different digital behaviors into one coherent product while keeping usability, privacy, security, performance and a clear product identity at the center.</div></details>
+  </div>
+</div>
+
+</section>
+
+<section id="faq-introduction" class="section">
+  <div class="section-head">
+    <span class="eyebrow">CHULIGRAM FAQ</span>
+    <h2>What is Chuligram? What can I do here?</h2>
+    <p>Chuligram is a communication, social, community and AI platform designed to bring everyday digital experiences together in one place.</p>
+  </div>
+  <div class="faq-feature">
+    <h3>One account. One connected ecosystem.</h3>
+    <p>You can communicate with people, participate in communities, follow channels, discover social content, explore short videos, use calls and eventually use Chuligram AI and developer-powered experiences without needing to treat every activity as a separate application.</p>
+    <p>Chuligram is inspired by the strengths people value in services such as Telegram, Facebook and TikTok, while aiming to create its own unified experience rather than simply copying another product.</p>
+  </div>
+</section>
+
+<section class="section integrated-faq" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">KNOWLEDGE CENTER</span>
+      <h2>Everything you want to know about Chuligram</h2>
+      <p>Explore detailed answers about messaging, communities, social features, privacy, AI, creators, developers, accounts and the future of the platform.</p>
+    </div>
+    <div class="faq-nav">
+  <a href="#getting-started">Getting Started</a><a href="#faq-messages">Messaging</a><a href="#faq-groups">Groups</a><a href="#faq-channels">Channels</a><a href="#faq-social">Social</a><a href="#faq-calls">Calls</a><a href="#faq-security">Security</a><a href="#faq-storage">Storage</a><a href="#ai">AI</a><a href="#faq-creators">Creators</a><a href="#faq-bots">Bots</a><a href="#faq-developers">Developers</a><a href="#faq-account">Account</a><a href="#faq-troubleshooting">Troubleshooting</a>
+</div>
+<div class="faq-tools"><input id="integratedFaqSearch" type="search" placeholder="Search the Chuligram FAQ..." aria-label="Search the Chuligram FAQ"></div>
+    <div class="integrated-faq-grid">
+      <section class="category" id="getting-started">
+<div class="category-head"><h2>Getting Started</h2><p>The basics of Chuligram and what the platform is designed to do.</p></div>
+<div class="faq">
+
+<article class="faq-item">
+<button class="faq-question">What is Chuligram? What can I do here?</button>
+<div class="answer">
+<p>Chuligram is a communication and social platform designed to bring messaging, communities, channels, social discovery, short-form video, creator experiences and intelligent technology together in one place.</p>
+<p>You can use Chuligram to send messages, share photos, videos and files, make calls, participate in private conversations, create communities, publish through channels, discover content and connect with other people.</p>
+<h4>Messages and conversations</h4>
+<p>Chuligram provides the everyday communication tools expected from a modern messaging platform, including replies, reactions, forwarding, editing, deletion, media sharing, file sharing, voice messages, notifications and search.</p>
+<h4>Groups and communities</h4>
+<p>Groups are designed for large communities, with a product target of supporting communities of up to <strong>400,000 members</strong>. Community features include replies, mentions, hashtags, reactions, pinned messages, permissions, moderation, anti-spam protection and topics.</p>
+<div class="target"><strong>About the 400,000-member target:</strong> reaching and reliably operating at that scale requires serious backend capacity, database design, realtime infrastructure, caching, rate limiting, moderation and load testing. The figure is a platform target, not a claim that every current deployment has already been load-tested at that size.</div>
+<h4>Channels and social discovery</h4>
+<p>Channels are designed for creators, organizations, businesses and communities that want to publish to an audience. The social side of Chuligram is intended to help people discover posts, creators, communities, photos, videos and short-form content.</p>
+<h4>Chuligram AI</h4>
+<p>Chuligram AI is being developed as a dedicated AI platform rather than simply a chatbot attached to messaging. Its direction includes conversation, reasoning, coding, research, web and knowledge tools, file analysis, image understanding, voice, memory, model routing and agent workflows.</p>
+<h4>Privacy and security</h4>
+<p>Privacy is a core design goal. Users can control important account and communication settings, including who can contact them, call them and see selected profile information.</p>
+<div class="note">Advanced cryptographic features such as end-to-end encrypted conversations should only be described as fully available after their underlying architecture has been implemented, tested and independently reviewed.</div>
+<p><strong>In short:</strong> Chuligram is being built as a place where people can talk, build communities, share, discover, create and work with AI.</p>
+<div class="related"><span>Messages</span><span>Groups</span><span>Channels</span><span>Social</span><span>Chuligram AI</span><span>Privacy</span></div>
+</div>
+</article>
+
+<article class="faq-item"><button class="faq-question">Why was Chuligram created?</button><div class="answer">
+<p>Chuligram was created around a simple idea: communication should not be fragmented across many separate products. Messaging, communities, publishing, social discovery, creator tools and AI can be designed to work together while still giving users control over their experience.</p>
+<p>The goal is not to copy one existing platform. Chuligram takes inspiration from familiar communication and social patterns while developing its own product identity, architecture and user experience.</p>
+<p>The long-term vision is a platform where an individual can chat with friends, join a community, follow a creator, publish content, run a business and use powerful AI tools without constantly moving between unrelated applications.</p>
+<div class="related"><span>Vision</span><span>Social</span><span>AI</span><span>Creators</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How is Chuligram different from other messaging apps?</button><div class="answer">
+<p>Chuligram is designed to go beyond messaging. Traditional messaging can be the foundation, but Chuligram's broader direction combines communication with communities, channels, social discovery, short-form content, creator and business experiences, developer tools and AI.</p>
+<p>The important distinction is the ecosystem: conversations are not isolated from communities and content. The platform is designed so these experiences can eventually work together while remaining understandable and controllable for users.</p>
+<div class="related"><span>Messaging</span><span>Communities</span><span>Social</span><span>AI</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What devices can I use Chuligram on?</button><div class="answer">
+<p>Chuligram is being developed with a multi-platform architecture. The project can support a web experience and an Android application, while broader desktop and iOS experiences can be developed as the platform matures.</p>
+<p>The goal is to keep the same account and core communication experience available across supported devices rather than creating completely separate products.</p>
+<div class="related"><span>Android</span><span>Web</span><span>Desktop</span><span>iOS</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Does Chuligram sync across my devices?</button><div class="answer">
+<p>Chuligram is designed around server-backed synchronization so that your conversations and account state can be available across supported clients.</p>
+<p>Reliable synchronization depends on the backend, realtime layer, database and client implementation. The goal is a consistent experience when moving between devices, including keeping messages and relevant account settings up to date.</p>
+<div class="related"><span>Devices</span><span>Messages</span><span>Account</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What are usernames and why do they matter?</button><div class="answer">
+<p>A username provides a public identity that people can use to find or reference you without needing to expose your phone number to everyone.</p>
+<p>For creators, communities and businesses, usernames can also become part of a recognizable public identity. Privacy controls should determine what other information is visible alongside that identity.</p>
+<div class="related"><span>Privacy</span><span>Profiles</span><span>Creators</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I use Chuligram for personal and business communication?</button><div class="answer">
+<p>Yes. Chuligram is designed to support both personal communication and professional use. Individuals can use private chats, groups and social features, while businesses can eventually use business profiles, channels, automation, bots and developer integrations.</p>
+<p>The exact availability of advanced business capabilities depends on the stage of the platform and implementation.</p>
+<div class="related"><span>Business</span><span>Bots</span><span>Channels</span><span>Developers</span></div>
+</div></article>
+</div>
+</section><section class="category" id="faq-messages">
+<div class="category-head"><h2>Messages &amp; Chats</h2><p>Private conversations, media, files and everyday communication.</p></div>
+<div class="faq">
+<article class="faq-item"><button class="faq-question">How do I send messages?</button><div class="answer">
+<p>Open a conversation, type your message and send it. Chuligram's messaging architecture is designed to deliver messages through the backend and realtime communication layer so participants can see updates without repeatedly refreshing the page.</p>
+<p>Depending on the conversation and available client features, messages can also support replies, reactions, editing, deletion, forwarding and other actions.</p>
+<div class="related"><span>Replies</span><span>Reactions</span><span>Realtime</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I edit or delete messages?</button><div class="answer">
+<p>Message editing and deletion are important parts of modern messaging. Chuligram's interface can provide message actions such as edit and delete, with the backend responsible for validating permissions and applying the change.</p>
+<p>Deletion rules can differ depending on the conversation type, account permissions and whether a message is being removed locally or for other participants. The system should always enforce these rules server-side rather than trusting the client.</p>
+<div class="related"><span>Message Actions</span><span>Privacy</span><span>Permissions</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I reply, forward, copy and react to messages?</button><div class="answer">
+<p>Chuligram is designed around rich message actions. Replies help keep conversations organized, forwarding helps share useful information, copying makes text reusable, and reactions provide a quick way to respond without writing another message.</p>
+<p>These actions can also be extended over time with message context, quoted previews, reaction counts and moderation controls.</p>
+<div class="related"><span>Replies</span><span>Forwarding</span><span>Reactions</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What are disappearing messages?</button><div class="answer">
+<p>Disappearing messages are messages that are automatically removed after a selected period. They are useful for conversations where users do not want messages to remain indefinitely.</p>
+<p>A disappearing-message system must define when the timer starts, what happens on different devices, and how deletion is handled by the server. Chuligram can expose these controls as part of conversation settings.</p>
+<div class="related"><span>Privacy</span><span>Auto-Delete</span><span>Chats</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I pin messages?</button><div class="answer">
+<p>Pinned messages keep important information easy to find. In a group, an admin can use pins for rules, announcements, event details or important resources. In other conversations, pins can help users keep important information visible.</p>
+<p>Permissions should determine who can pin, replace or remove pinned content.</p>
+<div class="related"><span>Groups</span><span>Moderation</span><span>Announcements</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How do mentions, hashtags and replies work?</button><div class="answer">
+<p>Mentions let users direct attention to another participant, replies preserve conversation context, and hashtags provide a way to organize and discover related messages or posts.</p>
+<p>In large communities, these features become especially useful because they reduce the need to read every message to understand where a discussion is happening.</p>
+<div class="related"><span>Groups</span><span>Search</span><span>Topics</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I send files, photos and videos?</button><div class="answer">
+<p>Chuligram is designed to support photos, videos, documents and other files. File sharing is useful for personal communication, schoolwork, teams, communities and business workflows.</p>
+<p>The final file-size limits and supported formats depend on the deployed storage and backend configuration. A production implementation should validate file types, sizes and permissions on the server.</p>
+<div class="related"><span>Files</span><span>Media</span><span>Storage</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I send photos and videos without losing quality?</button><div class="answer">
+<p>Chuligram can distinguish between optimized media and original files. Optimized media can save bandwidth and storage, while original uploads preserve more of the source quality.</p>
+<p>The final behavior depends on the upload pipeline and media-storage implementation. Users should be able to choose an appropriate quality level where supported.</p>
+<div class="related"><span>Media Quality</span><span>Data Usage</span><span>Storage</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How do voice messages work?</button><div class="answer">
+<p>Voice messages let users record and send short audio clips inside a conversation. A complete implementation handles recording, upload, playback, duration, permissions and storage.</p>
+<p>Privacy settings can also determine whether other users are allowed to send voice messages to you.</p>
+<div class="related"><span>Voice</span><span>Privacy</span><span>Media</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I schedule messages?</button><div class="answer">
+<p>Scheduled messaging allows a message to be prepared now and delivered later. It can be useful for reminders, announcements, work communication and international teams.</p>
+<p>A reliable implementation requires server-side scheduling so the message does not depend on the sender keeping the app open.</p>
+<div class="related"><span>Automation</span><span>Groups</span><span>Business</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I save messages for later?</button><div class="answer">
+<p>A saved-message experience provides a personal place to keep useful messages, links, files, notes or reminders. It can function as a lightweight personal knowledge area inside the communication platform.</p>
+<div class="related"><span>Saved Messages</span><span>Files</span><span>Notes</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I search my conversations?</button><div class="answer">
+<p>Search is essential when conversations become large. Chuligram can provide message search across conversations, with filters such as sender, date, conversation and media type as the search system grows.</p>
+<p>Search quality depends on indexing and database design. A production-scale system should use appropriate indexes and, where necessary, dedicated search infrastructure.</p>
+<div class="related"><span>Search</span><span>Messages</span><span>Files</span></div>
+</div></article>
+</div>
+</section><section class="category" id="faq-groups">
+<div class="category-head"><h2>Groups &amp; Communities</h2><p>Build conversations and communities ranging from small teams to very large audiences.</p></div>
+<div class="faq">
+<article class="faq-item"><button class="faq-question">What are Chuligram Groups?</button><div class="answer">
+<p>Chuligram Groups are community spaces where multiple people can communicate, share media, discuss topics and organize around common interests.</p>
+<p>They can be used for friends, classes, projects, organizations, fan communities, local communities, businesses and large public discussions.</p>
+<div class="related"><span>Communities</span><span>Topics</span><span>Moderation</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How large can a Chuligram Group become?</button><div class="answer">
+<p>Chuligram's product target is to support groups of up to <strong>400,000 members</strong>.</p>
+<p>That target is intentionally ambitious. Supporting hundreds of thousands of participants reliably requires horizontally scalable servers, efficient PostgreSQL/database design, realtime infrastructure, caching, queues, rate limiting, moderation systems, observability and extensive load testing.</p>
+<div class="note"><strong>Important:</strong> 400,000 is a platform target. It should not be interpreted as a claim that every current Chuligram deployment has already been proven under a 400,000-member production load.</div>
+<div class="related"><span>Scale</span><span>Infrastructure</span><span>Moderation</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How do I create a group?</button><div class="answer">
+<p>Creating a group is intended to be a simple flow: choose the group option, select participants, give the community a name and optionally add a profile image and description.</p>
+<p>Once created, administrators can configure permissions, moderation rules, invitations, topics and other community settings.</p>
+<div class="related"><span>Admins</span><span>Permissions</span><span>Invites</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What are group admins and moderators?</button><div class="answer">
+<p>Administrators manage the structure and settings of a group. Moderators focus on keeping conversations organized and dealing with problematic content or behavior.</p>
+<p>A mature community system can support different permission levels so an organization does not need to give every staff member complete control.</p>
+<div class="related"><span>Permissions</span><span>Moderation</span><span>Anti-Spam</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What permissions can group admins control?</button><div class="answer">
+<p>Group permissions can control who is allowed to send messages, add members, change information, pin content, share media and perform moderation actions.</p>
+<p>Fine-grained permissions are particularly important for large communities because they let administrators protect the community without preventing normal participation.</p>
+<div class="related"><span>Admins</span><span>Privacy</span><span>Moderation</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What are Topics?</button><div class="answer">
+<p>Topics divide a large group into focused discussions. Instead of one enormous stream where every subject is mixed together, members can participate in dedicated conversations.</p>
+<p>Topics are useful for schools, developer communities, support communities, projects and organizations where different subjects need separate spaces.</p>
+<div class="related"><span>Groups</span><span>Organization</span><span>Search</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How does group moderation and anti-spam work?</button><div class="answer">
+<p>Large communities need more than manual moderation. Chuligram's direction includes permission controls, rate limiting, spam detection, reporting, administrator tools and automated protection.</p>
+<p>Automated systems should assist human moderators rather than blindly deleting legitimate conversations. Moderation rules should also be transparent enough for administrators to understand what happened.</p>
+<div class="related"><span>Safety</span><span>Anti-Spam</span><span>Reports</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can groups be public or private?</button><div class="answer">
+<p>Yes, the product direction supports both private communities and public communities. Private groups are useful for trusted circles, teams and organizations, while public groups can help communities grow through discovery.</p>
+<p>Visibility and invitation settings should be separate from ordinary message permissions so administrators have precise control.</p>
+<div class="related"><span>Privacy</span><span>Discovery</span><span>Invites</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I invite people using a link?</button><div class="answer">
+<p>Invite links make it easier to bring people into a community without manually adding every participant. Administrators can control whether links are active, revoke them and create different links where supported.</p>
+<div class="related"><span>Groups</span><span>Privacy</span><span>Invites</span></div>
+</div></article>
+</div>
+</section><section class="category" id="faq-channels">
+<div class="category-head"><h2>Channels &amp; Broadcasting</h2><p>Publish announcements, stories, education, news and creator content to an audience.</p></div>
+<div class="faq">
+<article class="faq-item"><button class="faq-question">What are Chuligram Channels?</button><div class="answer">
+<p>Channels are publishing spaces designed for creators, organizations, businesses, communities and public figures. They are different from ordinary groups because the primary purpose is broadcasting content to an audience.</p>
+<p>A channel can be used for announcements, educational content, news, product updates, entertainment or community information.</p>
+<div class="related"><span>Creators</span><span>Broadcasting</span><span>Business</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What is the difference between a group and a channel?</button><div class="answer">
+<p>A group is primarily a conversation space: many members can participate in discussion. A channel is primarily a publishing space: selected publishers or administrators distribute content to an audience.</p>
+<p>Channels can still be connected to discussion experiences where supported, giving audiences a way to respond without turning the publishing feed into an uncontrolled chat stream.</p>
+<div class="related"><span>Groups</span><span>Creators</span><span>Comments</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Who can publish in a channel?</button><div class="answer">
+<p>Channel owners and authorized administrators can control who is allowed to publish. This makes channels suitable for organizations where several people may manage content but not everyone should have identical permissions.</p>
+<div class="related"><span>Admins</span><span>Permissions</span><span>Business</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can channels have unlimited followers?</button><div class="answer">
+<p>Chuligram's channel architecture is intended for very large audiences. The practical limit depends on the production infrastructure, database, notification system, content-delivery layer and operational testing at scale.</p>
+<p>Rather than promising a specific unlimited number before the infrastructure is proven, Chuligram can describe channels as being designed for large-scale broadcasting.</p>
+<div class="related"><span>Scale</span><span>Broadcasting</span><span>Infrastructure</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can channels have comments and discussions?</button><div class="answer">
+<p>Channels can be connected to discussion experiences so an announcement can have a conversation associated with it. This separates the main published content from the community discussion around it.</p>
+<div class="related"><span>Comments</span><span>Groups</span><span>Channels</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I use a channel for a business, creator brand or organization?</button><div class="answer">
+<p>Absolutely. Channels are especially useful for public communication. A creator can publish content, a business can announce products and updates, and an organization can distribute news or educational material.</p>
+<div class="related"><span>Creators</span><span>Business</span><span>Social</span></div>
+</div></article>
+</div>
+</section><section class="category" id="faq-social">
+<div class="category-head"><h2>Social</h2><p>Discover people, communities, posts, creators and short-form content.</p></div>
+<div class="faq">
+<article class="faq-item"><button class="faq-question">What is the Chuligram social feed?</button><div class="answer">
+<p>The social feed is the part of Chuligram designed for public and community-oriented content rather than one-to-one conversations. It can bring together posts, photos, videos, creator content, community activity and other discoveries.</p>
+<p>The goal is to make Chuligram useful even when you are not actively chatting with someone.</p>
+<div class="related"><span>Discovery</span><span>Creators</span><span>Videos</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How do posts work?</button><div class="answer">
+<p>Posts allow users or eligible pages, channels and creators to publish content for an audience. Depending on the content type, posts can contain text, images, videos, links or other supported media.</p>
+<p>Visibility should be controlled by the publishing context, such as public, followers, community or private audiences.</p>
+<div class="related"><span>Privacy</span><span>Creators</span><span>Channels</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I like, react, comment and share?</button><div class="answer">
+<p>Social interactions can include reactions, comments and sharing. Reactions provide quick feedback, comments support conversation and sharing helps useful content reach other people.</p>
+<p>These controls should respect privacy, moderation and the permissions of the original post.</p>
+<div class="related"><span>Posts</span><span>Comments</span><span>Privacy</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I follow creators?</button><div class="answer">
+<p>The creator experience is designed around public profiles, channels and content discovery. Following can allow people to receive updates from creators without requiring a direct conversation.</p>
+<p>Creator tools can eventually include audience analytics, publishing tools and community connections.</p>
+<div class="related"><span>Creators</span><span>Channels</span><span>Discovery</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What are short videos?</button><div class="answer">
+<p>Short-form video is part of Chuligram's broader social direction. It is intended to provide a fast, mobile-friendly way to discover entertainment, education, creativity and community content.</p>
+<p>A mature short-video experience requires video processing, content delivery, moderation, recommendations and creator tools. Those components should be developed and tested independently as the feature grows.</p>
+<div class="related"><span>Video</span><span>Creators</span><span>Discovery</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How can Chuligram support creators?</button><div class="answer">
+<p>Creators can use public profiles, channels, posts, communities and short-form content to build an audience. Over time, creator tools can expand into analytics, content management, audience engagement, business tools and monetization capabilities where appropriate.</p>
+<p>The aim is to make creators first-class participants in the Chuligram ecosystem rather than treating social publishing as an afterthought.</p>
+<div class="related"><span>Creators</span><span>Business</span><span>Channels</span></div>
+</div></article>
+</div>
+</section><section class="category" id="faq-calls">
+<div class="category-head"><h2>Calls</h2><p>Voice, video and group communication.</p></div>
+<div class="faq">
+<article class="faq-item"><button class="faq-question">Can I make voice calls?</button><div class="answer">
+<p>Voice calling is part of Chuligram's communication direction. A complete calling system needs realtime signaling, media transport, permissions, connection management and reliability across different networks.</p>
+<p>Call permissions can allow users to decide who is allowed to initiate calls with them.</p>
+<div class="related"><span>Voice</span><span>Privacy</span><span>Realtime</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I make video calls?</button><div class="answer">
+<p>Video calls extend voice communication with live camera and microphone streams. A production implementation normally uses realtime media technology designed for low-latency communication.</p>
+<p>Users should be able to control camera and microphone permissions and decide who can call them.</p>
+<div class="related"><span>Video</span><span>Privacy</span><span>Calls</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I make group calls?</button><div class="answer">
+<p>Group calling is part of the broader Chuligram communication roadmap. Supporting larger calls requires specialized media infrastructure because every participant adds network and processing requirements.</p>
+<p>Group-call capacity should be presented according to what the deployed infrastructure has actually been tested to support.</p>
+<div class="related"><span>Groups</span><span>Voice</span><span>Video</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How do call permissions work?</button><div class="answer">
+<p>Call permissions allow users to decide who can initiate voice or video calls. These settings can work alongside blocking, privacy and contact controls.</p>
+<p>Permissions should be enforced by the server as well as represented in the client interface.</p>
+<div class="related"><span>Privacy</span><span>Blocked Users</span><span>Account</span></div>
+</div></article>
+</div>
+</section><section class="category" id="faq-security">
+<div class="category-head"><h2>Privacy &amp; Security</h2><p>Controls that help users understand and manage their account and communication privacy.</p></div>
+<div class="faq">
+<article class="faq-item"><button class="faq-question">Is Chuligram secure?</button><div class="answer">
+<p>Security is a core engineering requirement for Chuligram. It includes authentication, authorization, session management, privacy controls, input validation, rate limiting, secure file handling, account protection and careful backend design.</p>
+<p>Security is not one feature or one badge. It is a process that requires secure implementation, testing, monitoring, updates and independent review.</p>
+<div class="related"><span>Privacy</span><span>Authentication</span><span>Sessions</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Does Chuligram use end-to-end encryption?</button><div class="answer">
+<p>End-to-end encryption is an important direction for private communication, but it should not be advertised as fully available unless the cryptographic architecture has actually been implemented and verified.</p>
+<p>A trustworthy E2EE implementation requires carefully designed key management, device verification, encryption protocols, secure recovery behavior, metadata considerations, testing and ideally independent security review.</p>
+<div class="note">Chuligram should make strong encryption claims only when they are technically implemented, tested and ready to be defended publicly.</div>
+<div class="related"><span>Encryption</span><span>Secret Chats</span><span>Security</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What are Secret Chats?</button><div class="answer">
+<p>Secret Chats are intended to represent a stronger privacy mode for sensitive one-to-one conversations. A complete implementation would need clearly defined cryptographic guarantees and device/key behavior.</p>
+<p>Until those guarantees are implemented and independently reviewed, Chuligram should describe this as a security direction rather than promise protections that do not yet exist.</p>
+<div class="related"><span>E2EE</span><span>Privacy</span><span>Keys</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What is Two-Step Verification?</button><div class="answer">
+<p>Two-Step Verification adds an additional password or secret alongside the primary account authentication method. It reduces the risk that possession of one login factor alone is enough to access an account.</p>
+<p>Users should choose a strong password and protect recovery information carefully.</p>
+<div class="related"><span>Account</span><span>Security</span><span>Recovery</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What are passkeys?</button><div class="answer">
+<p>Passkeys are a modern authentication approach based on public-key credentials stored by supported devices or password managers. They are designed to reduce dependence on traditional passwords and resist many forms of credential theft.</p>
+<p>A passkey feature should only be described as fully supported once the WebAuthn/passkey flow is actually implemented and tested end to end.</p>
+<div class="related"><span>Authentication</span><span>Passkeys</span><span>Security</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How does Passcode Lock work?</button><div class="answer">
+<p>Passcode Lock protects access to the application on a device after the app is opened. It is useful when someone else can physically access the device.</p>
+<p>It complements account security; it does not replace strong authentication or secure server-side authorization.</p>
+<div class="related"><span>Privacy</span><span>Device Security</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How do I block someone?</button><div class="answer">
+<p>Blocking is a personal safety and privacy control. A blocked user should be prevented from performing the interactions covered by the block rules, such as messaging or calling.</p>
+<p>Blocking should be enforced consistently by the backend so another client cannot bypass the restriction.</p>
+<div class="related"><span>Privacy</span><span>Calls</span><span>Messages</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Who can see my phone number, profile photo and birthday?</button><div class="answer">
+<p>Chuligram is designed with individual privacy controls for profile information. Users can choose visibility settings for information such as their phone number, profile photo, birthday and bio where those controls are available.</p>
+<p>Privacy settings should be enforced by the server and not merely hidden in the interface.</p>
+<div class="related"><span>Profile</span><span>Privacy Settings</span><span>Account</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How does device and session management work?</button><div class="answer">
+<p>Device/session management lets users review active sessions and remove access from devices they no longer recognize or use.</p>
+<p>A strong implementation records session metadata carefully, provides secure revocation and protects session credentials from exposure.</p>
+<div class="related"><span>Sessions</span><span>Security</span><span>Devices</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What happens when I delete my account?</button><div class="answer">
+<p>Account deletion should be treated as a destructive operation. A complete implementation needs to define which account data is removed immediately, what must be retained for legal or security reasons, what happens to messages in other people's conversations and how backups are handled.</p>
+<p>Chuligram should clearly communicate the consequences before a user confirms deletion.</p>
+<div class="related"><span>Account</span><span>Privacy</span><span>Data</span></div>
+</div></article>
+</div>
+</section><section class="category" id="faq-storage">
+<div class="category-head"><h2>Media &amp; Storage</h2><p>Control downloads, data usage, cached media and network behavior.</p></div>
+<div class="faq">
+<article class="faq-item"><button class="faq-question">How does automatic media downloading work?</button><div class="answer">
+<p>Automatic media downloading determines when photos, videos and other files should be downloaded automatically. Users can configure different behavior depending on the network type, such as mobile data or Wi-Fi.</p>
+<p>Good defaults should balance convenience, bandwidth and storage.</p>
+<div class="related"><span>Data Usage</span><span>Media</span><span>Storage</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How do I control mobile data usage?</button><div class="answer">
+<p>Data usage controls can reduce bandwidth consumption by limiting automatic downloads, lowering media quality or restricting background activity.</p>
+<p>This is particularly useful on mobile networks where data may be expensive or limited.</p>
+<div class="related"><span>Media Quality</span><span>Downloads</span><span>Network</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How do I clear Chuligram's cache?</button><div class="answer">
+<p>Cache contains temporary local data that can normally be regenerated. Clearing it can free device storage without necessarily deleting your account or server-side conversations.</p>
+<p>Users should always be shown clearly what will be removed before confirming a cleanup operation.</p>
+<div class="related"><span>Storage Usage</span><span>Privacy</span><span>Data</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What is Storage Usage?</button><div class="answer">
+<p>Storage Usage helps users understand how much local space Chuligram is consuming and what types of cached media are responsible for that usage.</p>
+<p>A useful storage page can provide cleanup controls without making users manually search through device folders.</p>
+<div class="related"><span>Cache</span><span>Media</span><span>Data Usage</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I use a proxy?</button><div class="answer">
+<p>Proxy support can allow network traffic to be routed through an intermediary server in environments where direct connections are restricted or unreliable.</p>
+<p>Users should only use trusted proxy services and understand that a proxy can introduce additional privacy and reliability considerations.</p>
+<div class="related"><span>Network</span><span>Privacy</span><span>Connectivity</span></div>
+</div></article>
+</div>
+</section><section class="category" id="ai">
+<div class="category-head"><h2>Chuligram AI</h2><p>A dedicated AI direction for conversation, reasoning, coding, research and intelligent tools.</p></div>
+<div class="faq">
+<article class="faq-item"><button class="faq-question">What is Chuligram AI?</button><div class="answer">
+<p>Chuligram AI is the AI platform within the wider Chuligram ecosystem. It is intended to become more than a simple chatbot by combining conversational intelligence with tools, memory, file understanding, vision, coding, research and agent workflows.</p>
+<p>The long-term goal is to make AI useful for everyday users, creators, students, developers and businesses.</p>
+<div class="related"><span>AI</span><span>Agents</span><span>Tools</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What can Chuligram AI do?</button><div class="answer">
+<p>The planned capability set includes:</p>
+<ul>
+<li>General conversation and reasoning</li>
+<li>Coding and software-development assistance</li>
+<li>File analysis and document understanding</li>
+<li>Image understanding</li>
+<li>Web and knowledge tools</li>
+<li>Voice interaction</li>
+<li>Memory and personalized context</li>
+<li>Model routing for different tasks</li>
+<li>Tool use and agent workflows</li>
+<li>Image generation and creative workflows</li>
+</ul>
+<p>Individual capabilities should be labeled according to whether they are currently available, under development or planned.</p>
+<div class="related"><span>Reasoning</span><span>Coding</span><span>Vision</span><span>Voice</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can Chuligram AI analyze files?</button><div class="answer">
+<p>File analysis is a major part of the AI direction. A capable system can accept supported documents and help summarize, extract information, answer questions, compare content or assist with structured analysis.</p>
+<p>File handling requires careful access control and secure processing so users only expose documents they intentionally provide.</p>
+<div class="related"><span>Files</span><span>AI</span><span>Privacy</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can Chuligram AI understand images?</button><div class="answer">
+<p>Image understanding is part of the planned AI capability set. Vision models can interpret supported images and answer questions about their visible content.</p>
+<p>As with any AI system, results can be imperfect, so important decisions should not rely blindly on model output.</p>
+<div class="related"><span>Vision</span><span>Files</span><span>AI</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can Chuligram AI help with coding?</button><div class="answer">
+<p>Yes, coding is a major direction for Chuligram AI. The coding experience can help explain code, debug errors, generate examples, reason about architecture, write tests and work through software-development problems.</p>
+<p>For serious production software, generated code should still be reviewed, tested and secured by a developer.</p>
+<div class="related"><span>Coding</span><span>Developers</span><span>Agents</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can Chuligram AI search the web?</button><div class="answer">
+<p>Web search and knowledge tools are part of the planned architecture. A search-enabled AI can retrieve current information instead of relying only on its model knowledge.</p>
+<p>A trustworthy implementation should distinguish retrieved information from model-generated reasoning and provide appropriate source context where possible.</p>
+<div class="related"><span>Web Search</span><span>Research</span><span>Sources</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can Chuligram AI remember conversations?</button><div class="answer">
+<p>Memory can allow an AI assistant to retain useful information across conversations. A responsible memory system should give users visibility and control over what is remembered, why it is remembered and how it can be deleted.</p>
+<p>Memory should not mean that every conversation is permanently stored as personal memory.</p>
+<div class="related"><span>Memory</span><span>Privacy</span><span>Settings</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What are AI agents?</button><div class="answer">
+<p>An AI agent is an AI system that can plan a task, use approved tools, observe results and continue working toward a goal rather than only returning one text response.</p>
+<p>Chuligram AI's planned agent architecture can eventually support research workflows, coding tasks, file operations and Chuligram-specific actions, subject to permissions and safety controls.</p>
+<div class="related"><span>Agents</span><span>Tools</span><span>Automation</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How does Chuligram AI protect my data?</button><div class="answer">
+<p>AI privacy depends on the actual model, storage, logging, provider and retention architecture. Users should be told clearly what information is sent to a model, what is stored, how long it is retained and whether it is used for other purposes.</p>
+<p>Chuligram's AI architecture should follow least-privilege access, explicit permissions, secure file handling and user-controlled memory.</p>
+<div class="related"><span>AI Privacy</span><span>Security</span><span>Memory</span></div>
+</div></article>
+</div>
+</section><section class="category" id="faq-creators">
+<div class="category-head"><h2>Creators &amp; Business</h2><p>Tools for people and organizations building audiences, communities and products.</p></div>
+<div class="faq">
+<article class="faq-item"><button class="faq-question">Can I use Chuligram for my business?</button><div class="answer">
+<p>Chuligram is designed to support businesses through public profiles, channels, communities, messaging, automation and future developer integrations.</p>
+<p>A business can use communication features for customers and teams while using publishing features to build a public presence.</p>
+<div class="related"><span>Business</span><span>Channels</span><span>Bots</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What are business accounts?</button><div class="answer">
+<p>Business accounts are intended to give organizations tools beyond a personal account, such as professional identity, customer communication, automation and business-oriented settings.</p>
+<p>The exact business feature set can expand as the platform develops.</p>
+<div class="related"><span>Business</span><span>Automation</span><span>Profiles</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can businesses automate messages?</button><div class="answer">
+<p>Automation can help businesses respond to common questions, route conversations, send scheduled information and connect Chuligram to their workflows.</p>
+<p>Automation should be permission-based and rate-limited to prevent spam and protect users.</p>
+<div class="related"><span>Bots</span><span>Automation</span><span>Safety</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can creators build communities?</button><div class="answer">
+<p>Yes. Creators can use groups, channels and social publishing together. A channel can distribute content while a linked community can provide discussion and direct audience interaction.</p>
+<div class="related"><span>Groups</span><span>Channels</span><span>Creators</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can creators publish short videos?</button><div class="answer">
+<p>Short-form video is part of Chuligram's social and creator direction. Creators can eventually use it to publish quick entertainment, education, tutorials, commentary and other content.</p>
+<p>Creator publishing at scale requires reliable video processing, storage, delivery and moderation infrastructure.</p>
+<div class="related"><span>Short Video</span><span>Creators</span><span>Social</span></div>
+</div></article>
+</div>
+</section><section class="category" id="faq-bots">
+<div class="category-head"><h2>Bots &amp; Automation</h2><p>Programmatic accounts and workflows that can interact with users and communities.</p></div>
+<div class="faq">
+<article class="faq-item"><button class="faq-question">What are Chuligram Bots?</button><div class="answer">
+<p>Bots are software-driven accounts or integrations that can respond to events and messages using programmed logic. They can automate repetitive tasks and connect Chuligram with external systems.</p>
+<p>Bots should operate within clear permissions and platform rules.</p>
+<div class="related"><span>Automation</span><span>Developers</span><span>Business</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I create my own bot?</button><div class="answer">
+<p>The developer direction for Chuligram includes bot and API capabilities so developers can create applications that interact with the platform.</p>
+<p>As the developer platform matures, bot creation should include authentication, permissions, event handling, rate limits and documentation.</p>
+<div class="related"><span>Developers</span><span>API</span><span>Security</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can bots interact with groups and channels?</button><div class="answer">
+<p>Bot integrations can be designed to work in communities and publishing environments for tasks such as moderation, notifications, utilities, support and content workflows.</p>
+<p>Access should always be restricted to the permissions granted to the bot.</p>
+<div class="related"><span>Groups</span><span>Channels</span><span>Permissions</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What is Chat Automation?</button><div class="answer">
+<p>Chat Automation allows predefined rules or intelligent systems to handle repetitive conversation tasks. Examples include welcome messages, customer support flows, frequently asked questions and routing conversations to the right person.</p>
+<p>Good automation should make communication faster without making users feel trapped in an endless automated loop.</p>
+<div class="related"><span>Bots</span><span>Business</span><span>AI</span></div>
+</div></article>
+</div>
+</section><section class="category" id="faq-developers">
+<div class="category-head"><h2>Developers</h2><p>Build integrations, bots, applications and services around Chuligram.</p></div>
+<div class="faq">
+<article class="faq-item"><button class="faq-question">Does Chuligram have an API?</button><div class="answer">
+<p>A developer platform is part of Chuligram's long-term architecture. APIs can expose controlled access to messaging, users, communities, channels, bots and other platform capabilities.</p>
+<p>Public API availability should be described according to the APIs that are actually deployed and documented.</p>
+<div class="related"><span>API</span><span>Bots</span><span>Developers</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Will Chuligram provide an SDK?</button><div class="answer">
+<p>SDKs can make it easier for developers to integrate Chuligram into websites, mobile applications and backend services. The long-term developer direction includes reusable libraries and clear documentation.</p>
+<div class="related"><span>API</span><span>SDK</span><span>Developers</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can developers build Chuligram apps?</button><div class="answer">
+<p>The platform can eventually support applications that use Chuligram identity, messaging, bots, communities or other approved capabilities.</p>
+<p>Developer access should be permission-based, documented and rate-limited to protect users and the platform.</p>
+<div class="related"><span>Apps</span><span>API</span><span>Security</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can developers build AI-powered applications with Chuligram?</button><div class="answer">
+<p>The combination of Chuligram's developer platform and Chuligram AI can eventually enable applications that combine communication with intelligent workflows.</p>
+<p>Examples include support assistants, community moderation tools, research bots, productivity applications and business automation.</p>
+<div class="related"><span>AI</span><span>Agents</span><span>API</span></div>
+</div></article>
+</div>
+</section><section class="category" id="faq-account">
+<div class="category-head"><h2>Account</h2><p>Manage your identity, login, privacy, sessions and data.</p></div>
+<div class="faq">
+<article class="faq-item"><button class="faq-question">How do I create a Chuligram account?</button><div class="answer">
+<p>Account creation should guide you through the supported authentication method, profile setup and basic privacy choices. The exact registration flow depends on the current Chuligram client and backend.</p>
+<p>Users should only provide information required for the account and should protect authentication credentials.</p>
+<div class="related"><span>Login</span><span>Privacy</span><span>Profile</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How do I change my name or username?</button><div class="answer">
+<p>Profile settings are intended to let users update their public identity information. Usernames normally need uniqueness checks and may be subject to platform rules.</p>
+<p>Changing a username can affect how other people find or reference the account, so users should consider that before making a change.</p>
+<div class="related"><span>Profile</span><span>Privacy</span><span>Username</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How do I change my password?</button><div class="answer">
+<p>Password changes should be performed from account security settings after the current authentication requirements are satisfied.</p>
+<p>Use a strong, unique password and do not reuse it on other services.</p>
+<div class="related"><span>Security</span><span>Two-Step Verification</span><span>Login</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I use multiple accounts?</button><div class="answer">
+<p>Multi-account support is useful for separating personal, professional or other identities. Chuligram's account architecture can support adding and switching between accounts where the client implementation provides that functionality.</p>
+<div class="related"><span>Accounts</span><span>Profile</span><span>Privacy</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Can I export my Chuligram data?</button><div class="answer">
+<p>A data-export feature can give users a portable copy of information associated with their account, subject to the supported data types and privacy rules.</p>
+<p>A good export system should clearly identify what is included and protect the resulting archive.</p>
+<div class="related"><span>Data</span><span>Privacy</span><span>Account</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How do I log out?</button><div class="answer">
+<p>Logging out ends the current client session. On a shared or public device, logging out is an important basic security step.</p>
+<p>For stronger protection, users should also review active sessions and revoke devices they no longer recognize.</p>
+<div class="related"><span>Sessions</span><span>Security</span><span>Devices</span></div>
+</div></article>
+</div>
+</section><section class="category" id="faq-troubleshooting">
+<div class="category-head"><h2>Troubleshooting</h2><p>Common problems and the first things to check.</p></div>
+<div class="faq">
+<article class="faq-item"><button class="faq-question">Why didn't my message send?</button><div class="answer">
+<p>Check your internet connection first. If the connection is working, the problem can be related to server availability, authentication, permissions, rate limits or the specific conversation.</p>
+<p>If the problem affects every conversation, restarting the client and signing in again can help identify whether the issue is local or account-related.</p>
+<div class="related"><span>Messages</span><span>Network</span><span>Support</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Why aren't notifications appearing?</button><div class="answer">
+<p>Check both Chuligram's notification settings and the operating system's notification permissions. Battery-saving or background restrictions can also prevent timely notifications.</p>
+<p>If notifications work on one device but not another, compare the device-specific settings.</p>
+<div class="related"><span>Notifications</span><span>Devices</span><span>Settings</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Why can't I upload a file?</button><div class="answer">
+<p>Check your connection, available storage, file size and file type. Upload failures can also happen if the backend storage service is unavailable or the account does not have permission to upload the selected content.</p>
+<p>Never bypass server-side file validation just to make an upload succeed.</p>
+<div class="related"><span>Files</span><span>Storage</span><span>Security</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Why isn't media loading?</button><div class="answer">
+<p>Slow or missing media can result from network conditions, cached data, unavailable storage, expired access or a temporary server problem.</p>
+<p>Try refreshing the conversation and checking your network before clearing local cache.</p>
+<div class="related"><span>Media</span><span>Storage</span><span>Network</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">Why can't I make a call?</button><div class="answer">
+<p>Check microphone and camera permissions, network connectivity and the call privacy settings of both participants.</p>
+<p>Realtime calling can also be affected by restrictive networks or temporary signaling/media-server problems.</p>
+<div class="related"><span>Calls</span><span>Permissions</span><span>Network</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">What should I do if I lose access to my account?</button><div class="answer">
+<p>Use the supported account-recovery process and avoid sharing passwords, verification codes or recovery secrets with anyone claiming to be support.</p>
+<p>If you still have another trusted session, review your active devices and secure the account immediately.</p>
+<div class="related"><span>Security</span><span>Recovery</span><span>Devices</span></div>
+</div></article>
+
+<article class="faq-item"><button class="faq-question">How do I report spam, abuse or a security problem?</button><div class="answer">
+<p>Chuligram should provide reporting mechanisms appropriate to the content or account involved. Reports can help moderators and security teams identify abuse, spam and suspicious behavior.</p>
+<p>Security vulnerabilities should be reported through an official security contact when one is provided, rather than publicly exposing exploitable details.</p>
+<div class="related"><span>Safety</span><span>Moderation</span><span>Security</span></div>
+</div></article>
+</div>
+</section>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+<div class="container">
+ <div class="section-head"><h2>Connect with Chuligram Labs</h2><p>For collaboration, development, feedback, future partnerships and project updates.</p></div>
+ <div class="grid two">
+  <div class="card"><div class="icon">👨‍💻</div><h3>Abraham Sintayehu</h3><p>Founder & Developer</p><div class="actions" style="justify-content:flex-start"><a class="btn secondary" href="https://abrahamweb-dev.github.io/Portfolio/" target="_blank" rel="noopener">Portfolio</a></div></div>
+  <div class="card"><div class="icon">🚀</div><h3>Chuligram Labs</h3><p>Building communication software, AI systems and future developer technology.</p><div class="actions" style="justify-content:flex-start"><a class="btn primary" href="#home">Explore</a></div></div>
+ </div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+ <div class="footer-grid">
+  <div><a class="brand" href="#home"><span class="logo"></span><span>CHULIGRAM LABS</span></a><p style="color:var(--muted);max-width:330px;margin-top:17px">Building the future of communication and AI — one product, one system and one experiment at a time.</p></div>
+  <div><h4>Chuligram</h4><a href="#chuligram">Messaging</a><a href="#chuligram">Groups</a><a href="#chuligram">Channels</a><a href="#chuligram">Calls</a><a href="#privacy">Privacy</a></div>
+  <div><h4>Chuligram AI</h4><a href="#ai">AI Chat</a><a href="#ai">Coding</a><a href="#ai">Vision</a><a href="#ai">Files</a><a href="#ai-architecture">Agents</a></div>
+  <div><h4>Platform</h4><a href="#technology">Technology</a><a href="#developers">API</a><a href="#developers">SDKs</a><a href="#roadmap">Roadmap</a><a href="#research">Research</a></div>
+  <div><h4>About</h4><a href="#about">Founder</a><a href="#story">Story</a><a href="#projects">Projects</a><a href="#news">News</a><a href="#faq">FAQ</a><a href="#status">Product status</a><a href="#platform-overview">Ecosystem</a></div>
+ </div>
+ <div class="footer-bottom"><span>© 2026 Chuligram Labs. All rights reserved.</span><span>Communication • AI • Research • Software</span></div>
+</div>
+</footer>
+
+<script>
+document.querySelectorAll('.navlinks a').forEach(a=>{
+  a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open'));
+});
+</script>
+
+<script>
+(function(){
+  const root=document.querySelector('.integrated-faq');
+  if(!root) return;
+  root.querySelectorAll('.faq-question').forEach(btn=>btn.addEventListener('click',()=>{
+    const item=btn.closest('.faq-item');
+    item.classList.toggle('open');
+  }));
+  const input=document.getElementById('integratedFaqSearch');
+  if(input){input.addEventListener('input',()=>{
+    const q=input.value.trim().toLowerCase();
+    root.querySelectorAll('.category').forEach(cat=>{
+      let visible=0;
+      cat.querySelectorAll('.faq-item').forEach(item=>{
+        const match=!q || item.textContent.toLowerCase().includes(q);
+        item.classList.toggle('faq-hidden',!match);
+        if(match) visible++;
+      });
+      cat.style.display=visible?'':'none';
+    });
+  });}
+})();
+</script>
+
+<div id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" style="display:none">
+  <a href="#chuligram">Chuligram</a>
+  <a href="#platform-overview">Features</a>
+  <a href="#ai">Chuligram AI</a>
+  <a href="#developers">Developers</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+</div>
+<style>
+@media(max-width:900px){
+  #mobile-nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid #e7edf0;box-shadow:0 12px 25px rgba(15,23,42,.08);padding:12px}
+  #mobile-nav.open{display:flex;flex-direction:column}
+  #mobile-nav a{padding:13px 10px;border-radius:10px;text-decoration:none;color:#17252d}
+}
+</style>
+<script>
+(function(){
+  const nav=document.getElementById('mobile-nav');
+  const btn=document.querySelector('.menu-toggle,.mobile-menu-toggle,[aria-label*="menu" i],[aria-label*="Menu"]');
+  if(!nav||!btn)return;
+  btn.addEventListener('click',function(){
+    const open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',String(open));
+  });
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+})();
+</script>
+
+</body>
+</html>
